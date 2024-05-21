@@ -1,9 +1,17 @@
 <title>All messages</title>
 <?php
 include 'style.html';
-$postid=$_GET['postid'];
-$userid=$_GET['userid'];
-$areaid=$_GET['areaid'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $postid = $_POST['postid'];
+    $text = $_POST['text'];
+    $userid=$_POST['userid'];
+    $areaid=$_POST['areaid'];
+}
+else{
+    $postid=$_GET['postid'];
+    $userid=$_GET['userid'];
+    $areaid=$_GET['areaid'];
+}
 ?>
 <body>
 	     <div class="flex-center position-ref full-height">
@@ -29,7 +37,6 @@ session_start();
 include "db.php";
 $sql = "select * from post where postid = $postid";
 $result = mysqli_query($db, $sql);
-$_SESSION['userid'] = $userid = $_GET['userid'];
 //從資料庫中撈留言紀錄並顯示出來
 while ($row = mysqli_fetch_assoc($result)) {
 	$postname=$row['postname'];
@@ -51,8 +58,58 @@ while ($row = mysqli_fetch_assoc($result)) {
 ?>
 <div class="">
 	<?php
+		echo "Message";
+		$sql="select name,text from message as m,register_user as u,post as p where m.uid=u.userid and m.pid=p.postid";
+		$result = mysqli_query($db,$sql);
+		while($row=mysqli_fetch_assoc($result)){
+			$text=$row['text'];
+			$name=$row['name'];
+			echo "<br>".$name;
+			echo ":".$text;
+		}
 		//echo "test";
 	?>
+	<div class="">
+	<form name="form1" action="viewPostDetail.php" method="post">
+				<input type="hidden" name="postid" value="<?=$postid?>">
+                <input type="hidden" name="userid" value="<?=$userid?>">
+                <input type="hidden" name="areaid" value="<?=$areaid?>">
+			<p><input type="text" name="text"></p>
+			<p><input type="submit" name="submit" value="SEND">
+			<style>
+                    input {
+                        padding:5px 15px;
+                        background:#FFCCCC;
+                        border:0 none;
+                        cursor:pointer;
+                        -webkit-border-radius: 5px;
+                        border-radius: 5px;
+                        font-family: 'Nunito', sans-serif;
+                        font-size: 19px;
+                        }
+                </style>
+	</form>
+	</div>
+	<?php
+//送出留言後會執行下面這段程式碼
+if (isset($_POST['submit'])) {
+	echo '<div class="success">Added successfully ！</div>';
+	$postid = $_POST['postid'];
+    $text = $_POST['text'];
+    $userid=$_POST['userid'];
+    $areaid=$_POST['areaid'];
+	$sql = "INSERT message(uid,pid,text) VALUES ('$userid', '$postid','$text')";
+	if (!mysqli_query($db, $sql)) {
+		die(mysqli_error($db));
+	} else {
+		echo "
+                <script>
+                setTimeout(function(){window.location.href='viewPostDetail.php?userid=" . $userid . "&areaid=" . $areaid . "&postid=".$postid."';},500);
+                </script>";
+
+	}
+} 
+?>
 </div>
 </div>
 </body>
