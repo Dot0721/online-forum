@@ -1,3 +1,4 @@
+
 <title>All messages</title>
 <?php
 include 'style.html';
@@ -35,4 +36,5 @@ include "db.php";
     }
     }
     // 假设 $db 是已连接的数据库连接对象
+
 ?>

@@ -1,3 +1,4 @@
+
 <title> User Infomation </title>
 <?php
 include 'style.html';
@@ -32,4 +33,5 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 ?>
 </div>
+
 </body>

@@ -1,3 +1,4 @@
+
 <title>All messages</title>
 <?php
 include 'style.html';
@@ -50,4 +51,5 @@ echo "There are " . mysqli_num_rows($result) . " messages.";*/
 ?>
 </div>
 </body>
+
 </html>

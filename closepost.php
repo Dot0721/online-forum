@@ -71,6 +71,7 @@ if (isset($_POST['submit'])) {
     $userid=$_POST['userid'];
     $areaid=$_POST['areaid'];
     $sql ="delete from message where pid=$postid";
+    mysqli_query($db, $sql);
     $sql ="delete from likeuserid where pid=$postid";
     mysqli_query($db, $sql);
 	$sql = "update post set postname='$violate',article='' where postid='$postid'";

@@ -1,3 +1,4 @@
+
 <?php
 include 'style.html';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -91,4 +92,5 @@ if (isset($_POST['submit'])) {
 } else {
 	echo '<div class="success">Click <strong>Send</strong> when you\'re done.</div>';
 }
+
 ?>
