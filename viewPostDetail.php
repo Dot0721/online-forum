@@ -61,7 +61,7 @@ else{
 			}else{
 				echo '<a href="delete.php?userid=' . $userid . '&postid=' . $postid. '&areaid='.$areaid.'">Delete the message</a><br>';
 			}
-			if ($userid == $manageid&& $findname['permission_level']>=2) {
+			if (($userid == $manageid&& $findname['permission_level']>=2)||$findname['permission_level']==3) {
 				echo ' <a href=" closepost.php?userid=' . $userid . '&postid=' . $postid. '&areaid='.$areaid.'">
 				close post</a>';
 				echo'<br>';

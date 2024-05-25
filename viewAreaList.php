@@ -1,6 +1,7 @@
 
 <title>All messages</title>
 <?php
+include "db.php";
 include 'style.html';
 $userid = $_GET['userid'];
 ?>
@@ -12,6 +13,12 @@ if (!$userid) {
 	echo '<a href="index.php">Log in</a>';
 } else {
 	//echo "<a href='board.php?name=" . $name . "'>Write some messages</a>";
+	$sql ="select * from register_user where userid=$userid";
+	$result = mysqli_query($db,$sql);
+	$row = mysqli_fetch_assoc($result);
+	if($row['permission_level']==3){
+		echo "<a href='createArea.php?userid=" . $userid . "'>Create Area</a>";
+	}
 	echo '<a href="index.php">Log out</a>';
 }?>
      </div>
@@ -26,7 +33,6 @@ if (!$userid) {
 	<div class="PostList post full-height">
 <?php
 session_start();
-include "db.php";
 $sql = "select * from post_area";
 $result = mysqli_query($db, $sql);
 $_SESSION['userid'] = $userid = $_GET['userid'];
