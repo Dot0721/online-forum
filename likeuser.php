@@ -7,7 +7,7 @@ include "db.php";
     $postid = $_POST['postid'];
     $userid = $_POST['userid'];
     $areaid = $_POST['areaid'];
-    $sql ="select * from likeuserid where uid=$userid";
+    $sql ="select * from likeuserid where uid=$userid and pid=$postid";
     $result = mysqli_query($db,$sql);
     if($rows = mysqli_num_rows($result)==0){
         $sql = "INSERT INTO likeuserid (uid, pid) VALUES ('$userid', '$postid')";
@@ -21,9 +21,9 @@ include "db.php";
             }, 500);
             </script>";
     }
-    }
+    }   
     else{
-        $sql = "DELETE FROM likeuserid WHERE uid=$userid";
+        $sql = "DELETE FROM likeuserid WHERE uid=$userid and pid=$postid";
     if (!mysqli_query($db, $sql)) {
         die('Error: ' . mysqli_error($db));
     } else {

@@ -44,7 +44,7 @@ include 'style.html';
 <body>
      <div class="flex-center position-ref full-height">
                 <div class="top-right home">
-                        <a href="viewAreaList.php?userid="$_GET['userid']"">View</a>
+                        <a href="viewAreaList.php?userid=">View</a>
                         <a href="signup.php">Register</a>
                 </div>
       <div class="content">

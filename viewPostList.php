@@ -31,7 +31,6 @@ if (!$userid) {
 </div>
 	<div class="PostList post full-height">
 <?php
-session_start();
 include "db.php";
 $sql = "select * from post where aid=$areaid";
 $result = mysqli_query($db, $sql);

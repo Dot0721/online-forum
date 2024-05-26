@@ -19,7 +19,11 @@ else{
 	<div class="top-right home">
         <?php
 			echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'>Last page</a>";
-			echo '<a href="index.php">Log out</a>';
+			if (!$userid) {
+				echo '<a href="index.php">Log in</a>';
+			}else{
+				echo '<a href="index.php">Log out</a>';
+			}
 		?>
      </div>
 	 <div class="top-left home">
@@ -58,8 +62,6 @@ else{
 			if ($userid == $uid&&$showInput==1) {  //若登入者名稱和留言者名稱一致，顯示出編輯和刪除的連結
 				echo ' <a href=" edit.php?userid=' . $userid . '&postid=' . $postid. '&areaid='.$areaid.'">
 				Edit message content</a>&nbsp|&nbsp<a href="delete.php?userid=' . $userid . '&postid=' . $postid. '&areaid='.$areaid.'">Delete the message</a><br>';
-			}else{
-				echo '<a href="delete.php?userid=' . $userid . '&postid=' . $postid. '&areaid='.$areaid.'">Delete the message</a><br>';
 			}
 			if (($userid == $manageid&& $findname['permission_level']>=2)||$findname['permission_level']==3) {
 				echo ' <a href=" closepost.php?userid=' . $userid . '&postid=' . $postid. '&areaid='.$areaid.'">
