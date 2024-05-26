@@ -57,11 +57,10 @@ else{
 //送出留言後會執行下面這段程式碼
 if (isset($_POST['submit'])) {
 	include "db.php";
-	echo '<div class="success">Added successfully ！</div>';
 	$userid = $_POST['userid'];
     $areaname=$_POST['areaname'];
     $manager=$_POST['manager'];
-    $sql="select * from register_user where name = $manager";
+    $sql="select * from register_user where name = '$manager'";
     $result=mysqli_query($db, $sql);
     $row = mysqli_fetch_assoc($result);
     $manageid=$row['userid'];
@@ -72,6 +71,7 @@ if (isset($_POST['submit'])) {
 		die(mysqli_error($db));
 	} else {
     //若成功將留言存進資料庫，會自動跳轉到顯示留言的頁面
+        echo '<div class="success">Added successfully ！</div>';
 		echo "
                 <script>
                 setTimeout(function(){window.location.href='viewAreaList.php?userid=" . $userid . "';},500);
