@@ -3,71 +3,69 @@
 <title> Login </title>
 
 <style>
+    div {
+        text-align: center;
+    }
     h1 {
         font: bold;
         font-size: 50;
         font-family: 'Nunito', sans-serif;
-        position: fixed;
-        right: 475px;
-        top: 80px;
+        position: relative;
+        top: 100px;
     }
     .dir {
         color: grey;
-        position: fixed;
-        right: 515px;
-        top: 175px;
+        font-size: 18;
+        position: relative;
+        top: 80px;
     }
     .name {
-        width: 295px;
-        height: 48px;
+        width: 300px;
+        height: 50px;
         padding: 12px 16px;
         border: solid;
         border-radius: 5px;
+        font-size: 18px;
         font-family: 'Nunito', sans-serif;
-        font-size: 19px;
-        position: fixed;
-        right: 500px;
-        top: 250px;
+        position: relative;
+        top: 90px;
     }
     .passwd {
-        width: 295px;
-        height: 48px;
+        width: 300px;
+        height: 50px;
         padding: 12px 16px;
         border: solid;
         border-radius: 5px;
+        font-size: 18px;
         font-family: 'Nunito', sans-serif;
-        font-size: 19px;
-        position: fixed;
-        right: 500px;
-        top: 325px;
+        position: relative;
+        top: 90px;
     }
     .signin {
-        width: 90px;
-        height: 40px;
+        width: 100px;
+        height: 50px;
         color: white;
         background-color: black;
-        position: fixed;
-        right: 600px;
-        top: 425px;
         border-radius: 5px;
+        position: relative;
+        top: 110px;
     }
     .view {
         width: 150px;
-        height: 40px;
+        height: 50px;
         border: none;
-        position: fixed;
-        right: 570px;
-        top: 500px;
+        position: relative;
+        top: 110px;
     }
     .signup {
-        width: 90px;
-        height: 40px;
+        width: 100px;
+        height: 50px;
         color: white;
         background-color: black;
-        position: fixed;
-        right: 80px;
-        top: 56px;
         border-radius: 5px;
+        position: absolute;
+        top: 40px;
+        right: 60px;
     }
 </style>
 
@@ -105,15 +103,19 @@ if (isset($_POST['submit'])) {
 ?>
 
 <body>
-    <a href="signup.php"> <button class="signup"> Sign Up </button> </a>
+    <a href="signup.php"> <button class="signup"> <b> Sign Up </b> </button> </a>
     <form name="login" action="index.php" method="post">
-        <h1> Good Morning! </h1>
-        <p class="dir"> Welcome to Bubbles, sign in to get started. </p>
-        <p> <input type="text" name="name" placeholder="User Name" class="name"> </p>
-        <p> <input type=password name="password" placeholder="Password" class="passwd"> </p>
-        <button type="submit" name="submit" class="signin"> <b> Sign In </b> </button>
+        <div>
+            <h1> Good Morning! </h1>
+            <p class="dir"> Welcome to Bubbles, sign in to get started. </p>
+            <p> <input type="text" name="name" placeholder="User Name" class="name"> </p>
+            <p> <input type=password name="password" placeholder="Password" class="passwd"> </p>
+            <button type="submit" name="submit" class="signin"> <b> Sign In </b> </button>
+        </div>
     </form>
-    <a href="viewAreaList.php?userid="> <button class="view"> <b> View as Anonymous </b> </button> </a>
+    <div>
+        <a href="viewAreaList.php?userid="> <button class="view"> <b> View as Anonymous </b> </button> </a>
+    </div>
 </body>
 
 </html>
