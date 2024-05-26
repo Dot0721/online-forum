@@ -1,7 +1,8 @@
+<html>
 
-<title>Sign up</title>
+<title> Sign up </title>
 
-<!--留言者按下Signup後接著會執行以下程式碼-->
+<!-- 留言者按下Signup後接著會執行以下程式碼 -->
 <?php
 header("Content-Type: text/html; charset=utf8");
 if (isset($_POST['submit'])) { 
@@ -45,46 +46,83 @@ setTimeout(function(){window.location.href='login.php';},2000);
 	}
     mysqli_close($db);
 }
-
-
 ?>
+
 <?php
-include 'style.html';
+//include 'style.html';
 ?>
-<body>
-     <div class="flex-center position-ref full-height">
-                <div class="top-right home">
-                        <a href="viewAreaList.php?name="$_GET['name']"">View</a>
-                        <a href="index.php">Login</a>
-                </div>
-      <div class="content">
-                <div class="m-b-md">
-                    <form name="signup" action="signup.php" method="post">
-                        <p>Username : <input type=text name="name"></p>
-                        <p>Password : <input type=password name="password"></p>
-                        <p><input type="submit" name="submit" value="Sign up">
-                    <style>
-                        input {padding:5px 15px; background:#ccc; border:0 none;
-                        cursor:pointer;
-                        -webkit-border-radius: 5px;
-                        border-radius: 5px; }
-                    </style>
-                        <input type="reset" name="Reset" value="Reset">
-                    <style>
-                        input {
-                            padding:5px 15px;
-                            background:#FFCCCC;
-                            border:0 none;
-                            cursor:pointer;
-                            -webkit-border-radius: 5px;
-                            border-radius: 5px;
-                            font-family: 'Nunito', sans-serif;
-                            font-size: 19px;
-                        }
-                    </style>
-                    </form>
-                </div>
 
+<style>
+    div {
+        text-align: center;
+    }
+    h1 {
+        font: bold;
+        font-size: 50;
+        font-family: 'Nunito', sans-serif;
+        position: relative;
+        top: 110px;
+    }
+    .dir {
+        color: grey;
+        font-size: 18;
+        position: relative;
+        top: 90px;
+    }
+    .name {
+        width: 300px;
+        height: 50px;
+        padding: 12px 16px;
+        border: solid;
+        border-radius: 5px;
+        font-size: 18px;
+        font-family: 'Nunito', sans-serif;
+        position: relative;
+        top: 100px;
+    }
+    .passwd {
+        width: 300px;
+        height: 50px;
+        padding: 12px 16px;
+        border: solid;
+        border-radius: 5px;
+        font-size: 18px;
+        font-family: 'Nunito', sans-serif;
+        position: relative;
+        top: 100px;
+    }
+    .create {
+        width: 100px;
+        height: 50px;
+        color: white;
+        background-color: black;
+        border-radius: 5px;
+        position: relative;
+        top: 120px;
+    }
+    .signin {
+        width: 100px;
+        height: 50px;
+        color: white;
+        background-color: black;
+        border-radius: 5px;
+        position: absolute;
+        top: 40px;
+        right: 60px;
+    }
+</style>
+
+<body>
+    <a href="index.php"> <button class="signin"> <b> Sign In </b> </button> </a>
+    <form name="signup" action="signup.php" method="post">
+        <div>
+            <h1> Create Your Account </h1>
+            <p class="dir"> Password should contains at least a number and an alphabet. </p>
+            <p> <input type="text" name="name" placeholder="User Name" class="name"> </p>
+            <p> <input type=password name="password" placeholder="Password" class="passwd"></p>
+            <button type="submit" name="submit" value="Sign up" class="create"> <b> Create </b> </button>
+        </div>
+    </form>
 </body>
 
 </html>
