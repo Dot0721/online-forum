@@ -11,13 +11,13 @@
         font-size: 50;
         font-family: 'Nunito', sans-serif;
         position: relative;
-        top: 100px;
+        top: 110px;
     }
     .dir {
         color: grey;
         font-size: 18;
         position: relative;
-        top: 80px;
+        top: 90px;
     }
     .name {
         width: 300px;
@@ -28,7 +28,7 @@
         font-size: 18px;
         font-family: 'Nunito', sans-serif;
         position: relative;
-        top: 90px;
+        top: 100px;
     }
     .passwd {
         width: 300px;
@@ -39,7 +39,7 @@
         font-size: 18px;
         font-family: 'Nunito', sans-serif;
         position: relative;
-        top: 90px;
+        top: 100px;
     }
     .signin {
         width: 100px;
@@ -48,14 +48,14 @@
         background-color: black;
         border-radius: 5px;
         position: relative;
-        top: 110px;
+        top: 120px;
     }
     .view {
         width: 150px;
         height: 50px;
         border: none;
         position: relative;
-        top: 110px;
+        top: 120px;
     }
     .signup {
         width: 100px;
