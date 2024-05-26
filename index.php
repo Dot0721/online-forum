@@ -113,7 +113,7 @@ if (isset($_POST['submit'])) {
         <p> <input type=password name="password" placeholder="Password" class="passwd"> </p>
         <button type="submit" name="submit" class="signin"> <b> Sign In </b> </button>
     </form>
-    <a href="viewAreaList.php?userid="$_GET['userid']""> <button class="view"> <b> View as Anonymous </b> </button> </a>
+    <a href="viewAreaList.php?userid="> <button class="view"> <b> View as Anonymous </b> </button> </a>
 </body>
 
 </html>

@@ -16,7 +16,7 @@ if (!$userid) {
 	$sql ="select * from register_user where userid=$userid";
 	$result = mysqli_query($db,$sql);
 	$row = mysqli_fetch_assoc($result);
-	echo "<a href='collectAreaList.php?userid=" . $userid . "'>Favorite</a>";
+	echo "<a href='viewAreaList.php?userid=". $userid . "'>view </a>";
 	if($row['permission_level']==3){
 		echo "<a href='createArea.php?userid=" . $userid . "'>Create Area</a>";
 	}
@@ -33,7 +33,10 @@ if (!$userid) {
 </div>
 	<div class="PostList post full-height">
 <?php
-$sql = "select * from post_area";
+$sql = "SELECT * 
+FROM post_area pa
+JOIN collect_area ca ON pa.areaid = ca.aid
+WHERE ca.uid = $userid";
 $result = mysqli_query($db, $sql);
 //從資料庫中撈留言紀錄並顯示出來
 while ($row = mysqli_fetch_assoc($result)) {
