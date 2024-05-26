@@ -17,12 +17,12 @@ else{
 <title>Edit Message</title>
 
 <body>
-     <div class="flex-center position-ref full-height">
-                <div class="top-right home">
-                        <a href='viewAreaList.php?userid=<?=$userid?>'>View</a>
-                        <a href="index.php">Logout</a>
-                        <a href="signup.php">Register</a>
-                </div>
+    <div class="flex-center position-ref full-height">
+        <div class="top-right home">
+            <a href='viewAreaList.php?userid=<?=$userid?>'>View</a>
+            <a href="index.php">Logout</a>
+            <a href="signup.php">Register</a>
+        </div>
 
 <?php
 include 'db.php';

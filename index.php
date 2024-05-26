@@ -1,5 +1,75 @@
+<html>
 
-<title>Login</title>
+<title> Login </title>
+
+<style>
+    h1 {
+        font: bold;
+        font-size: 50;
+        font-family: 'Nunito', sans-serif;
+        position: fixed;
+        right: 475px;
+        top: 80px;
+    }
+    .dir {
+        color: grey;
+        position: fixed;
+        right: 515px;
+        top: 175px;
+    }
+    .name {
+        width: 295px;
+        height: 48px;
+        padding: 12px 16px;
+        border: solid;
+        border-radius: 5px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 19px;
+        position: fixed;
+        right: 500px;
+        top: 250px;
+    }
+    .passwd {
+        width: 295px;
+        height: 48px;
+        padding: 12px 16px;
+        border: solid;
+        border-radius: 5px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 19px;
+        position: fixed;
+        right: 500px;
+        top: 325px;
+    }
+    .signin {
+        width: 90px;
+        height: 40px;
+        color: white;
+        background-color: black;
+        position: fixed;
+        right: 600px;
+        top: 425px;
+        border-radius: 5px;
+    }
+    .view {
+        width: 150px;
+        height: 40px;
+        border: none;
+        position: fixed;
+        right: 570px;
+        top: 500px;
+    }
+    .signup {
+        width: 90px;
+        height: 40px;
+        color: white;
+        background-color: black;
+        position: fixed;
+        right: 80px;
+        top: 56px;
+        border-radius: 5px;
+    }
+</style>
 
 <?php
 header("Content-Type: text/html; charset=utf8");
@@ -21,60 +91,29 @@ if (isset($_POST['submit'])) {
 			setTimeout(function(){window.location.href='viewAreaList.php?userid=" .$userid . "';},600);
 			</script>";
 			exit;
-		} else {
+		}
+        else {
 			echo '<div class="warning">Wrong Username or Password！</div>';
 		}
-	} else {
-
+	}
+    else {
 		echo '<div class="warning">Incompleted form！ </div>';
-		echo "
-<script>
-setTimeout(function(){window.location.href='index.php';},2000);
-</script>";
+		echo "<script> setTimeout(function(){window.location.href='index.php';},2000); </script>";
 	}
 	mysqli_close($db);
-
 }
-
 ?>
 
-<?php
-include 'style.html';
-?>
 <body>
-     <div class="flex-center position-ref full-height">
-                <div class="top-right home">
-                        <a href="viewAreaList.php?userid="$_GET['userid']"">View</a>
-                        <a href="signup.php">Register</a>
-                </div>
-      <div class="content">
-                <div class="m-b-md">
-                    <form name="login" action="index.php" method="post">
-                        <p>Username : <input type=text name="name"></p>
-                        <p>Password : <input type=password name="password"></p>
-                        <p><input type="submit" name="submit" value="Log in">
-                    <style>
-                        input {padding:5px 15px; background:#ccc; border:0 none;
-                        cursor:pointer;
-                        -webkit-border-radius: 5px;
-                        border-radius: 5px; }
-                    </style>
-                        <input type="reset" name="Reset" value="Reset">
-                    <style>
-                        input {
-                            padding:5px 15px;
-                            background:#FFCCCC;
-                            border:0 none;
-                            cursor:pointer;
-                            -webkit-border-radius: 5px;
-                            border-radius: 5px;
-                            font-family: 'Nunito', sans-serif;
-                            font-size: 19px;
-                        }
-                    </style>
-                    </form>
-                </div>
-
+    <a href="signup.php"> <button class="signup"> Sign Up </button> </a>
+    <form name="login" action="index.php" method="post">
+        <h1> Good Morning! </h1>
+        <p class="dir"> Welcome to Bubbles, sign in to get started. </p>
+        <p> <input type="text" name="name" placeholder="User Name" class="name"> </p>
+        <p> <input type=password name="password" placeholder="Password" class="passwd"> </p>
+        <button type="submit" name="submit" class="signin"> <b> Sign In </b> </button>
+    </form>
+    <a href="viewAreaList.php?userid="$_GET['userid']""> <button class="view"> <b> View as Anonymous </b> </button> </a>
 </body>
 
 </html>
