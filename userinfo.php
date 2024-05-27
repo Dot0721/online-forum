@@ -24,13 +24,13 @@
 	.view {
 		width: 100px;
         height: 50px;
-        background: none;
+		font-size: 16px;
+		background: none;
 		border: none;
-		font-size: 16;
         position: absolute;
         top: 40px;
-        right: 180px;
-        cursor: pointer;
+        left: 20px;
+		cursor: pointer;
 	}
 	.main {
 		text-align: center;
@@ -57,7 +57,7 @@
 			echo '<a href="index.php">Log in</a>';
 		}
 		else {
-			echo "<a href='viewAreaList.php?userid=".$userid."'> <button class='view'> <b> View </b> </button> </a>";
+			echo "<a href='viewAreaList.php?userid=".$userid."'> <button class='view'> <b> Bubbles </b> </button> </a>";
 			echo '<a href="index.php"> <button class="logout"> <b> Log out </b> </button> </a>';
 		}
 	?>

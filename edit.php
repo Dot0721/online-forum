@@ -1,21 +1,22 @@
+<html>
 
 <?php
-include 'style.html';
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $postname = $_POST['postname'];
-    $postid = $_POST['postid'];
-    $article = $_POST['article'];
-    $userid=$_POST['userid'];
-    $areaid=$_POST['areaid'];
-}
-else{
-    $postid=$_GET['postid'];
-    $userid=$_GET['userid'];
-    $areaid=$_GET['areaid'];
-}
-
+    include 'style.html';
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $postname = $_POST['postname'];
+        $postid = $_POST['postid'];
+        $article = $_POST['article'];
+        $userid=$_POST['userid'];
+        $areaid=$_POST['areaid'];
+    }
+    else {
+        $postid=$_GET['postid'];
+        $userid=$_GET['userid'];
+        $areaid=$_GET['areaid'];
+    }
 ?>
-<title>Edit Message</title>
+
+<title> Edit Message </title>
 
 <body>
      <div class="flex-center position-ref full-height">
@@ -25,17 +26,17 @@ else{
                         <a href="signup.php">Register</a>
                 </div>
 
-<?php
-include 'db.php';
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $query = "SELECT * FROM post WHERE  postid=" . $_POST['postid'] .""; //選出該位使用者所留下的所有留言
-}
-else{
-    $query = "SELECT * FROM post WHERE  postid=" . $_GET['postid'] .""; //選出該位使用者所留下的所有留言
-}
-$result = mysqli_query($db, $query);
-while ($rs = mysqli_fetch_array($result)) {
-	?>
+    <?php
+        include 'db.php';
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $query = "SELECT * FROM post WHERE  postid=" . $_POST['postid'] .""; //選出該位使用者所留下的所有留言
+        }
+        else{
+            $query = "SELECT * FROM post WHERE  postid=" . $_GET['postid'] .""; //選出該位使用者所留下的所有留言
+        }
+        $result = mysqli_query($db, $query);
+        while ($rs = mysqli_fetch_array($result)) {
+    ?>
       <div class="content">
                 <div class="m-b-md">
                     <form name="form1" action="edit.php" method="post">
@@ -70,27 +71,28 @@ while ($rs = mysqli_fetch_array($result)) {
                 </div>
 
 </body>
+
 </html>
+
 <?php }
+    if (isset($_POST['submit'])) {
+        $postname = $_POST['postname'];
+        $postid = $_POST['postid'];
+        $article = $_POST['article'];
+        $userid=$_POST['userid'];
+        $areaid=$_POST['areaid'];
+        $sql = "update post set postname='$postname',article='$article' where postid='$postid'";
+        if (!mysqli_query($db, $sql)) {
+            die(mysqli_error($con));
+        } else {
+            echo "
+            <script>
+                setTimeout(function(){window.location.href='viewPostList.php?areaid=$areaid&userid=$userid';},200);
+            </script>";
 
-if (isset($_POST['submit'])) {
-	$postname = $_POST['postname'];
-    $postid = $_POST['postid'];
-    $article = $_POST['article'];
-    $userid=$_POST['userid'];
-    $areaid=$_POST['areaid'];
-	$sql = "update post set postname='$postname',article='$article' where postid='$postid'";
-	if (!mysqli_query($db, $sql)) {
-		die(mysqli_error($con));
-	} else {
-		echo "
-         <script>
-            setTimeout(function(){window.location.href='viewPostList.php?areaid=$areaid&userid=$userid';},200);
-        </script>";
-
-	}
-} else {
-	echo '<div class="success">Click <strong>Send</strong> when you\'re done.</div>';
-}
-
+        }
+    }
+    else {
+        echo '<div class="success">Click <strong>Send</strong> when you\'re done.</div>';
+    }
 ?>

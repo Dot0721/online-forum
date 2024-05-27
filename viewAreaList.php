@@ -66,7 +66,7 @@
         height: 50px;
 		font-size: 16px;
 		background: none;
-		border: none;
+		border-radius: 5px;
         position: absolute;
         top: 40px;
         left: 20px;

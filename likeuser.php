@@ -1,9 +1,8 @@
-<title>All messages</title>
+<title> All messages </title>
 
 <?php
     include 'style.html';
     include "db.php";
-
     $postid = $_POST['postid'];
     $userid = $_POST['userid'];
     $areaid = $_POST['areaid'];
