@@ -9,29 +9,30 @@
 ?>
 
 <style>
-	.logout {
+	.bubbles {
         width: 100px;
         height: 50px;
+        font-size: 20;
+        color: black;
+        background: none;
+        border: none;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        cursor: pointer;
+    }
+    .logout {
+        width: 100px;
+        height: 50px;
+        font-size: 16;
         color: white;
         background: black;
         border-radius: 5px;
-		font-size: 16;
         position: absolute;
-        top: 40px;
-        right: 60px;
+        top: 5%;
+        right: 5%;
         cursor: pointer;
     }
-	.view {
-		width: 100px;
-        height: 50px;
-		font-size: 16px;
-		background: none;
-		border: none;
-        position: absolute;
-        top: 40px;
-        left: 20px;
-		cursor: pointer;
-	}
 	.main {
 		text-align: center;
 		font-size: 30;
@@ -57,7 +58,7 @@
 			echo '<a href="index.php">Log in</a>';
 		}
 		else {
-			echo "<a href='viewAreaList.php?userid=".$userid."'> <button class='view'> <b> Bubbles </b> </button> </a>";
+			echo "<a href='viewAreaList.php?userid=".$userid."'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<a href="index.php"> <button class="logout"> <b> Log out </b> </button> </a>';
 		}
 	?>

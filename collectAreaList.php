@@ -19,17 +19,29 @@
 		position: relative;
 		left: 0;
 	}
-	.logout {
+	.bubbles {
         width: 100px;
         height: 50px;
+        font-size: 20;
+        color: black;
+        background: none;
+        border: none;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        cursor: pointer;
+    }
+    .logout {
+        width: 100px;
+        height: 50px;
+        font-size: 16;
         color: white;
-		font-size: 16px;
         background: black;
         border-radius: 5px;
         position: absolute;
-        top: 40px;
-        right: 60px;
-		cursor: pointer;
+        top: 5%;
+        right: 5%;
+        cursor: pointer;
     }
 	.account {
 		width: 100px;
@@ -38,8 +50,8 @@
 		background: none;
 		border-radius: 5px;
         position: absolute;
-        top: 40px;
-        right: 180px;
+        top: 5%;
+        right: 15%;
 		cursor: pointer;
 	}
 	.create_area {
@@ -49,19 +61,8 @@
 		background: none;
 		border: none;
         position: absolute;
-        top: 40px;
-        right: 300px;
-		cursor: pointer;
-	}
-	.bubbles {
-		width: 100px;
-        height: 50px;
-		font-size: 16px;
-		background: none;
-		border: none;
-        position: absolute;
-        top: 40px;
-        left: 20px;
+        top: 5%;
+        right: 25%;
 		cursor: pointer;
 	}
 	.main {
@@ -94,7 +95,7 @@
 <body>
 	<?php
 		if (!$userid) {
-			echo '<a href="index.php">Log in</a>';
+			echo '<a href="index.php"> Log in </a>';
 		}
 		else {
 			//echo "<a href='board.php?name=" . $name . "'>Write some messages</a>";

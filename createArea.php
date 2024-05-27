@@ -28,24 +28,25 @@
     .bubbles {
         width: 100px;
         height: 50px;
-        font-size: 16px;
+        font-size: 20;
+        color: black;
         background: none;
         border: none;
         position: absolute;
-        top: 40px;
-        left: 20px;
+        top: 5%;
+        left: 5%;
         cursor: pointer;
     }
     .logout {
         width: 100px;
         height: 50px;
-        color: white;
         font-size: 16;
+        color: white;
         background: black;
         border-radius: 5px;
         position: absolute;
-        top: 40px;
-        right: 60px;
+        top: 5%;
+        right: 5%;
         cursor: pointer;
     }
     .area-name {
@@ -84,12 +85,12 @@
 </style>
 
 <body>
-    <a href="index.php"> <button class="logout"> <b> Logout </b> </button> </a>
     <a href='viewAreaList.php?userid=<?=$userid?>'> <button class='bubbles'> <b> Bubbles </b> </button> </a>
+    <a href="index.php"> <button class="logout"> <b> Log out </b> </button> </a>
     <form name="form1" action="createArea.php" method="post">
         <div>
             <h1> Create Area </h1>
-            <p> <input type="hidden" name="userid" value="<?=$userid?>"> </p>
+            <input type="hidden" name="userid" value="<?=$userid?>"> </p>
             <p> <input type="text" name="areaname" placeholder="Area Name" class="area-name"> </p>
             <p> <input type="text" name="manager" placeholder="Manager Name" class="manager-name"> </p>
             <button type="submit" name="submit" value="SEND" class="send"> <b> Send </b> </button>

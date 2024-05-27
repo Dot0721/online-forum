@@ -1,8 +1,8 @@
 <html>
 
-<?php
-    include 'style.html';
+<title> Edit User Information </title>
 
+<?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $postid=$_POST['postid'];
         $userid=$_POST['userid'];
@@ -17,61 +17,113 @@
     }
 ?>
 
-<title>Edit Message</title>
+<style>
+    div {
+        text-align: center;
+    }
+    h1 {
+        font: bold;
+        font-size: 50;
+        font-family: 'Nunito', sans-serif;
+        position: relative;
+        top: 110px;
+    }
+    .bubbles {
+        width: 100px;
+        height: 50px;
+        font-size: 20;
+        color: black;
+        background: none;
+        border: none;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        cursor: pointer;
+    }
+    .logout {
+        width: 100px;
+        height: 50px;
+        font-size: 16;
+        color: white;
+        background: black;
+        border-radius: 5px;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        cursor: pointer;
+    }
+    .name {
+        width: 300px;
+        height: 50px;
+        padding: 12px 16px;
+        border: solid;
+        border-radius: 5px;
+        font-size: 18px;
+        font-family: 'Nunito', sans-serif;
+        position: relative;
+        top: 100px;
+    }
+    .passwd {
+        width: 300px;
+        height: 50px;
+        padding: 12px 16px;
+        border: solid;
+        border-radius: 5px;
+        font-size: 18px;
+        font-family: 'Nunito', sans-serif;
+        position: relative;
+        top: 100px;
+    }
+    .save {
+        width: 100px;
+        height: 50px;
+        color: white;
+        font-size: 16;
+        background: black;
+        border-radius: 5px;
+        position: relative;
+        top: 120px;
+        cursor: pointer;
+    }
+    .rewrite {
+        width: 100px;
+        height: 50px;
+        color: white;
+        font-size: 16;
+        background: black;
+        border-radius: 5px;
+        position: relative;
+        top: 120px;
+        cursor: pointer;
+    }
+</style>
 
 <body>
-    <div class="flex-center position-ref full-height">
-        <div class="top-right home">
-            <a href='viewAreaList.php?userid=<?=$userid?>'>View</a>
-            <a href="index.php">Logout</a>
-            <a href="signup.php">Register</a>
+    <a href='viewAreaList.php?userid=<?=$userid?>'> <button class='bubbles'> <b> Bubbles </b> </button> </a>
+    <a href="index.php"> <button class="logout"> <b> Log out </b> </button> </a>
+    <?php
+        include 'db.php';
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $query = "SELECT * FROM register_user WHERE  userid=" . $_POST['userid'] .""; 
+        }
+        else {
+            $query = "SELECT * FROM register_user WHERE  userid=" . $_GET['userid'] .""; 
+        }
+        $result = mysqli_query($db, $query);
+        while ($rs = mysqli_fetch_array($result)) {
+    ?>
+    <form name="form1" action="editUser.php" method="post">
+        <div>
+            <h1> Edit User Information </h1>
+            <input type="hidden" name="postid" value="<?=$postid?>">
+            <input type="hidden" name="userid" value="<?=$rs['userid']?>">
+            <input type="hidden" name="areaid" value="<?=$areaid?>">
+            <p> <input type="text" name="name" value="<?=$rs['name']?>" class="name" > </p>
+            <p> <input type="text" name="password" value="<?=$rs['password']?>" class="passwd"> </p>
+            <button type="submit" name="submit" value="SAVE" class="save"> <b> Save </b> </button>
+            <button type="reset" name="Reset" value="REWRITE" class="rewrite"> <b> Rewrite </b> </button>
         </div>
-
-<?php
-    include 'db.php';
-
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $query = "SELECT * FROM register_user WHERE  userid=" . $_POST['userid'] .""; 
-    }
-    else {
-        $query = "SELECT * FROM register_user WHERE  userid=" . $_GET['userid'] .""; 
-    }
-    $result = mysqli_query($db, $query);
-    while ($rs = mysqli_fetch_array($result)) {
-?>
-      <div class="content">
-                <div class="m-b-md">
-                    <form name="form1" action="editUser.php" method="post">
-                        <input type="hidden" name="postid" value="<?=$postid?>">
-                        <input type="hidden" name="userid" value="<?=$rs['userid']?>">
-                        <input type="hidden" name="areaid" value="<?=$areaid?>">
-                        <p>Name</p>
-                        <input type="text" name="name" value="<?=$rs['name']?>">
-                        <p>Password</p>
-                        <input type="text" name="password" value="<?=$rs['password']?>">
-                        <p><input type="submit" name="submit" value="SAVE">
-                    <style>
-                        input {padding:5px 15px; background:#ccc; border:0 none;
-                        cursor:pointer;
-                        -webkit-border-radius: 5px;
-                        border-radius: 5px; }
-                    </style>
-                        <input type="reset" name="Reset" value="REWRITE">
-                    <style>
-                        input {
-                            padding:5px 15px;
-                            background:#FFCCCC;
-                            border:0 none;
-                            cursor:pointer;
-                            -webkit-border-radius: 5px;
-                            border-radius: 5px;
-                            font-family: 'Nunito', sans-serif;
-                            font-size: 19px;
-                        }
-                    </style>
-                    </form>
-                </div>
-
+    </form>
 </body>
 
 </html>
@@ -95,7 +147,9 @@
 
         }
     }
+    /*
     else {
         echo '<div class="success">Click <strong>Send</strong> when you\'re done.</div>';
     }
+    */
 ?>
