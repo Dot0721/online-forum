@@ -112,8 +112,8 @@
     <a href="signup.php"> <button class="signup"> <b> Sign Up </b> </button> </a>
     <form name="login" action="index.php" method="post">
         <div>
-            <h1> Good Morning! </h1>
-            <p class="dir"> Welcome to Bubbles, sign in to get started. </p>
+            <h1> Welcome to Bubbles! </h1>
+            <p class="dir"> Sign in to get started. </p>
             <p> <input type="text" name="name" placeholder="User Name" class="name"> </p>
             <p> <input type=password name="password" placeholder="Password" class="passwd"> </p>
             <button type="submit" name="submit" class="login"> <b> Login </b> </button>
