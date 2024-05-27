@@ -1,55 +1,133 @@
+<html>
+
 <title> Area List </title>
 
 <?php
-include "db.php";
-include 'style.html';
-$userid = $_GET['userid'];
+	include "db.php";
+	$userid = $_GET['userid'];
 ?>
-<body>
-	<div class="flex-center position-ref full-height">
-	<div class="top-right home">
-                <?php
-if (!$userid) {
-	echo '<a href="index.php">Log in</a>';
-} else {
-	//echo "<a href='board.php?name=" . $name . "'>Write some messages</a>";
-	$sql ="select * from register_user where userid=$userid";
-	$result = mysqli_query($db,$sql);
-	$row = mysqli_fetch_assoc($result);
-	echo "<a href='collectAreaList.php?userid=" . $userid . "'>Favorite</a>";
-	if($row['permission_level']==3){
-		echo "<a href='createArea.php?userid=" . $userid . "'>Create Area</a>";
+
+<style>
+	h1 {
+		text-align: center;
+		font-size: 50;
+		font-family: 'Nunito', sans-serif;
+		position: relative;
+		top: 100px;
 	}
-	echo '<a href="index.php">Log out</a>';
-}?>
-     </div>
-	 <div class="top-left home">
-		<?php
-			if($userid){
-				echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'>User</a>";
+	.dir {
+		text-align: center;
+		font-size: 18;
+		font-family: 'Nunito', sans-serif;
+		color: grey;
+		position: relative;
+		top: 90px;
+	}
+	.logout {
+        width: 100px;
+        height: 50px;
+        color: white;
+        background: black;
+        border-radius: 5px;
+		font-size: 16;
+        position: absolute;
+        top: 40px;
+        right: 60px;
+        cursor: pointer;
+    }
+	.fav {
+		width: 100px;
+        height: 50px;
+        background: none;
+		border: none;
+		font-size: 16;
+        position: absolute;
+        top: 40px;
+        right: 180px;
+        cursor: pointer;
+	}
+	.account {
+		width: 100px;
+        height: 50px;
+        background: none;
+		border: none;
+		font-size: 16;
+        position: absolute;
+        top: 40px;
+        left: 60px;
+        cursor: pointer;
+	}
+	.main {
+		width: 500px;
+        font-size: 20px;
+		font-family: 'Nunito', sans-serif;
+        letter-spacing: .125rem;
+        position: relative;
+        left: 400px;
+        top: 125px;
+	}
+	.enter {
+		width: 90px;
+        height: 40px;
+		color: white;
+        background: black;
+        border-radius: 5px;
+		position: relative;
+		cursor: pointer;
+	}
+	.star {
+		width: 20px;
+		height: 20px;
+		position: relative;
+	}
+</style>
+
+<body>
+	<?php
+		if (!$userid) {
+			echo '<a href="index.php">Log in</a>';
+		}
+		else {
+			//echo "<a href='board.php?name=" . $name . "'>Write some messages</a>";
+			$sql ="select * from register_user where userid=$userid";
+			$result = mysqli_query($db,$sql);
+			$row = mysqli_fetch_assoc($result);
+			echo "<a href='collectAreaList.php?userid=" . $userid . "'> <button class='fav'> <b> Favorite </b> </button> </a>";
+			if($row['permission_level']==3){
+				echo "<a href='createArea.php?userid=" . $userid . "'> Create Area </a>";
 			}
+			echo '<a href="index.php"> <button class="logout"> <b> Log out </b> </button> </a>';
+		}
+	?>
+	<?php
+		if($userid){
+			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
+		}
+	?>
+	<h1> Bubbles </h1>
+	<p class="dir"> Choose a bubble to start chatting! </p>
+	<div class="main">
+		<?php
+			$sql = "select * from post_area";
+			$result = mysqli_query($db, $sql);
+			//從資料庫中撈留言紀錄並顯示出來
+			while ($row = mysqli_fetch_assoc($result)) {
+				$areaname=$row['areaname'];
+				$areaid=$row['areaid'];
+				//echo "<br>Subject：" . $row['subject'];
+				echo "<h3> $areaname <h3>";
+				echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='enter'> enter </button> </a>";
+				echo "<a href='collectArea.php?areaid=$areaid&userid=$userid'> <img src='star.png' alt='Button' class='star'> </a>";
+				echo "<br>";
+				echo "<hr>";
+			}
+			/*
+			echo "<br>";
+			echo '<div class="bottom left position-abs content">';
+			echo "There are " . mysqli_num_rows($result) . " messages.";
+			*/
 		?>
-	 </div>
-</div>
-	<div class="PostList post full-height">
-<?php
-$sql = "select * from post_area";
-$result = mysqli_query($db, $sql);
-//從資料庫中撈留言紀錄並顯示出來
-while ($row = mysqli_fetch_assoc($result)) {
-    $areaname=$row['areaname'];
-    $areaid=$row['areaid'];
-	//echo "<br>Subject：" . $row['subject'];
-    echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'>$areaname</a>";
-	echo " <a href='collectArea.php?areaid=$areaid&userid=$userid'><img src='star.png' alt='Button' style='width:20px;height:20px;border:0;'></a>";
-    echo "<br>";
-	echo "<hr>";
-}/*
-echo "<br>";
-echo '<div class="bottom left position-abs content">';
-echo "There are " . mysqli_num_rows($result) . " messages.";*/
-?>
-</div>
+	</div>
 </body>
 
 </html>

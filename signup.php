@@ -40,16 +40,12 @@ if (isset($_POST['submit'])) {
 		echo '<div class="warning">Incompleted form！ </div>';
         //以下為javascript語法，註冊成功後會自動跳轉到登入頁面
 		echo "
-<script>
-setTimeout(function(){window.location.href='login.php';},2000);
-</script>";
+            <script>
+            setTimeout(function(){window.location.href='login.php';},2000);
+            </script>";
 	}
     mysqli_close($db);
 }
-?>
-
-<?php
-//include 'style.html';
 ?>
 
 <style>
@@ -99,6 +95,7 @@ setTimeout(function(){window.location.href='login.php';},2000);
         border-radius: 5px;
         position: relative;
         top: 120px;
+        cursor: pointer;
     }
     .signin {
         width: 100px;
@@ -109,6 +106,7 @@ setTimeout(function(){window.location.href='login.php';},2000);
         position: absolute;
         top: 40px;
         right: 60px;
+        cursor: pointer;
     }
 </style>
 
