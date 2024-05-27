@@ -1,6 +1,6 @@
 <html>
 
-<title> Favorite Area </title>
+<title> Favorite Areas </title>
 
 <?php
 	include "db.php";
@@ -36,7 +36,7 @@
         height: 50px;
 		font-size: 16px;
 		background: none;
-		border: none;
+		border-radius: 5px;
         position: absolute;
         top: 40px;
         right: 180px;

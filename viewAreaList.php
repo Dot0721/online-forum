@@ -1,6 +1,6 @@
 <html>
 
-<title> Area List </title>
+<title> All Areas </title>
 
 <?php
 	include "db.php";
@@ -102,7 +102,7 @@
 <body>
 	<?php
 		if (!$userid) {
-			echo '<a href="index.php">Log in</a>';
+			echo '<a href="index.php"> Log in </a>';
 		}
 		else {
 			//echo "<a href='board.php?name=" . $name . "'>Write some messages</a>";
@@ -121,8 +121,8 @@
 			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
 		}
 	?>
-	<h1> Bubbles </h1>
-	<p class="dir"> Choose a bubble to start chatting! </p>
+	<h1> All Areas </h1>
+	<p class="dir"> Choose an area to start chatting! </p>
 	<div class="main">
 		<?php
 			$sql = "select * from post_area";

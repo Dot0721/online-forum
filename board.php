@@ -7,7 +7,7 @@
         $postname = $_POST['postname'];
         $article = $_POST['article'];
     }
-    else{
+    else {
         $userid = $_GET['userid'];
         $areaid = $_GET['areaid'];
     }
@@ -16,9 +16,10 @@
     $output=mysqli_fetch_assoc($result);
     $name=$output['name'];
 ?>
+
 <html>
 
-<title>Board</title>
+<title> Board </title>
 
 <body>
      <div class="flex-center position-ref full-height">
