@@ -78,7 +78,7 @@ if (isset($_POST['submit'])) {
         width: 100px;
         height: 50px;
         color: white;
-        background-color: black;
+        background: black;
         border-radius: 5px;
         position: relative;
         top: 120px;
@@ -87,6 +87,7 @@ if (isset($_POST['submit'])) {
         width: 150px;
         height: 50px;
         border: none;
+        background: none;
         position: relative;
         top: 120px;
     }
@@ -94,7 +95,7 @@ if (isset($_POST['submit'])) {
         width: 100px;
         height: 50px;
         color: white;
-        background-color: black;
+        background: black;
         border-radius: 5px;
         position: absolute;
         top: 40px;

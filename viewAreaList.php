@@ -1,5 +1,5 @@
+<title> Area List </title>
 
-<title>All messages</title>
 <?php
 include "db.php";
 include 'style.html';
