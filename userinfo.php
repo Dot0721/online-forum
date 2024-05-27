@@ -57,8 +57,8 @@
 			echo '<a href="index.php">Log in</a>';
 		}
 		else {
-			echo "<a href='viewAreaList.php?userid=".$userid."'> <button class='view'> View </button> </a>";
-			echo '<a href="index.php"> <button class="logout"> Log out </button> </a>';
+			echo "<a href='viewAreaList.php?userid=".$userid."'> <button class='view'> <b> View </b> </button> </a>";
+			echo '<a href="index.php"> <button class="logout"> <b> Log out </b> </button> </a>';
 		}
 	?>
 	<div class="main">

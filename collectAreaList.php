@@ -23,6 +23,7 @@ $userid = $_GET['userid'];
         position: absolute;
         top: 40px;
         right: 60px;
+		cursor: pointer;
     }
 	.account {
 		width: 100px;
@@ -33,8 +34,9 @@ $userid = $_GET['userid'];
         position: absolute;
         top: 40px;
         right: 180px;
+		cursor: pointer;
 	}
-	.createarea {
+	.create_area {
 		width: 110px;
         height: 50px;
 		font-size: 16px;
@@ -43,6 +45,7 @@ $userid = $_GET['userid'];
         position: absolute;
         top: 40px;
         right: 300px;
+		cursor: pointer;
 	}
 	.bubbles {
 		width: 100px;
@@ -53,6 +56,7 @@ $userid = $_GET['userid'];
         position: absolute;
         top: 40px;
         left: 20px;
+		cursor: pointer;
 	}
 </style>
 <body>
@@ -68,7 +72,7 @@ else {
 	$row = mysqli_fetch_assoc($result);
 	echo "<a href='viewAreaList.php?userid=". $userid . "'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 	if($row['permission_level']==3){
-		echo "<a href='createArea.php?userid=" . $userid . "'> <button class='createarea'> <b> Create Area </b> </button> </a>";
+		echo "<a href='createArea.php?userid=" . $userid . "'> <button class='create_area'> <b> Create Area </b> </button> </a>";
 	}
 	echo '<a href="index.php"> <button class="logout"> <b> Log out </b> </button> </a>';
 }

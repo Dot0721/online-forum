@@ -1,20 +1,22 @@
 <?php
-include 'db.php';
-include 'style.html';
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $violate=$_POST['violate'];
-    $postid = $_POST['postid'];
-    $userid=$_POST['userid'];
-    $areaid=$_POST['areaid'];
-}
-else{
-    $postid=$_GET['postid'];
-    $userid=$_GET['userid'];
-    $areaid=$_GET['areaid'];
-}
-
+    include 'db.php';
+    include 'style.html';
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $violate=$_POST['violate'];
+        $postid = $_POST['postid'];
+        $userid=$_POST['userid'];
+        $areaid=$_POST['areaid'];
+    }
+    else{
+        $postid=$_GET['postid'];
+        $userid=$_GET['userid'];
+        $areaid=$_GET['areaid'];
+    }
 ?>
-<title>Edit Message</title>
+
+<html>
+
+<title> Edit Message </title>
 
 <body>
      <div class="flex-center position-ref full-height">
@@ -62,27 +64,28 @@ else{
                 </div>
 
 </body>
+
 </html>
+
 <?php 
+    if (isset($_POST['submit'])) {
+        $postid = $_POST['postid'];
+        $violate=$_POST['violate'];
+        $userid=$_POST['userid'];
+        $areaid=$_POST['areaid'];
+        $sql ="delete from message where pid=$postid";
+        mysqli_query($db, $sql);
+        $sql ="delete from likeuserid where pid=$postid";
+        mysqli_query($db, $sql);
+        $sql = "update post set postname='$violate',article='' where postid='$postid'";
+        if (!mysqli_query($db, $sql)) {
+            die(mysqli_error($con));
+        } else {
+            echo "
+            <script>
+                setTimeout(function(){window.location.href='viewPostList.php?areaid=$areaid&userid=$userid';},200);
+            </script>";
 
-if (isset($_POST['submit'])) {
-    $postid = $_POST['postid'];
-    $violate=$_POST['violate'];
-    $userid=$_POST['userid'];
-    $areaid=$_POST['areaid'];
-    $sql ="delete from message where pid=$postid";
-    mysqli_query($db, $sql);
-    $sql ="delete from likeuserid where pid=$postid";
-    mysqli_query($db, $sql);
-	$sql = "update post set postname='$violate',article='' where postid='$postid'";
-	if (!mysqli_query($db, $sql)) {
-		die(mysqli_error($con));
-	} else {
-		echo "
-         <script>
-            setTimeout(function(){window.location.href='viewPostList.php?areaid=$areaid&userid=$userid';},200);
-        </script>";
-
-	}
-} 
+        }
+    }
 ?>

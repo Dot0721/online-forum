@@ -39,7 +39,7 @@
         right: 60px;
         cursor: pointer;
     }
-	.account {
+	.fav {
 		width: 100px;
         height: 50px;
         background: none;
@@ -50,8 +50,8 @@
         right: 180px;
         cursor: pointer;
 	}
-	.fav {
-		width: 100px;
+	.create_area {
+		width: 110px;
         height: 50px;
         background: none;
 		border: none;
@@ -60,6 +60,17 @@
         top: 40px;
         right: 300px;
         cursor: pointer;
+	}
+	.account {
+		width: 100px;
+        height: 50px;
+		font-size: 16px;
+		background: none;
+		border: none;
+        position: absolute;
+        top: 40px;
+        left: 20px;
+		cursor: pointer;
 	}
 	.main {
 		width: 500px;
@@ -100,7 +111,7 @@
 			$row = mysqli_fetch_assoc($result);
 			echo "<a href='collectAreaList.php?userid=" . $userid . "'> <button class='fav'> <b> Favorite </b> </button> </a>";
 			if($row['permission_level']==3){
-				echo "<a href='createArea.php?userid=" . $userid . "'> Create Area </a>";
+				echo "<a href='createArea.php?userid=" . $userid . "'> <button class='create_area'> <b> Create Area </b> </button> </a>";
 			}
 			echo '<a href="index.php"> <button class="logout"> <b> Log out </b> </button> </a>';
 		}
