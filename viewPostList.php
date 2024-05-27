@@ -1,5 +1,6 @@
+<html>
 
-<title>All messages</title>
+	<title> All messages </title>
 <?php
 include 'style.html';
 $userid = $_GET['userid'];

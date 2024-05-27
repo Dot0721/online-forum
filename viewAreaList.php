@@ -15,6 +15,10 @@
 		position: relative;
 		top: 100px;
 	}
+	h3 {
+		position: relative;
+		left: 0;
+	}
 	.dir {
 		text-align: center;
 		font-size: 18;
@@ -35,7 +39,7 @@
         right: 60px;
         cursor: pointer;
     }
-	.fav {
+	.account {
 		width: 100px;
         height: 50px;
         background: none;
@@ -46,7 +50,7 @@
         right: 180px;
         cursor: pointer;
 	}
-	.account {
+	.fav {
 		width: 100px;
         height: 50px;
         background: none;
@@ -54,7 +58,7 @@
 		font-size: 16;
         position: absolute;
         top: 40px;
-        left: 60px;
+        right: 300px;
         cursor: pointer;
 	}
 	.main {
@@ -66,19 +70,21 @@
         left: 400px;
         top: 125px;
 	}
-	.enter {
-		width: 90px;
-        height: 40px;
-		color: white;
-        background: black;
-        border-radius: 5px;
-		position: relative;
-		cursor: pointer;
-	}
 	.star {
 		width: 20px;
 		height: 20px;
-		position: relative;
+		position: absolute;
+		left: 0px;
+	}
+	.enter {
+		width: 90px;
+        height: 35px;
+		color: white;
+        background: black;
+        border-radius: 5px;
+		position: absolute;
+		right: 0px;
+		cursor: pointer;
 	}
 </style>
 
@@ -116,10 +122,9 @@
 				$areaid=$row['areaid'];
 				//echo "<br>Subject：" . $row['subject'];
 				echo "<h3> $areaname <h3>";
-				echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='enter'> enter </button> </a>";
 				echo "<a href='collectArea.php?areaid=$areaid&userid=$userid'> <img src='star.png' alt='Button' class='star'> </a>";
-				echo "<br>";
-				echo "<hr>";
+				echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='enter'> enter </button> </a>";
+				echo "<br><hr><br>";
 			}
 			/*
 			echo "<br>";
