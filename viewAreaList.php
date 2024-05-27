@@ -19,6 +19,18 @@
 		position: relative;
 		left: 0;
 	}
+	.login {
+        width: 100px;
+        height: 50px;
+        color: white;
+        font-size: 16;
+        background: black;
+        border-radius: 5px;
+        position: absolute;
+        top: 40px;
+        right: 60px;
+        cursor: pointer;
+    }
 	.dir {
 		text-align: center;
 		font-size: 18;
@@ -102,7 +114,7 @@
 <body>
 	<?php
 		if (!$userid) {
-			echo '<a href="index.php"> Log in </a>';
+			echo '<a href="index.php"> <button class="login"> <b> Login </b> </button> </a>';
 		}
 		else {
 			//echo "<a href='board.php?name=" . $name . "'>Write some messages</a>";
