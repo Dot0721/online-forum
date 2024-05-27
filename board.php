@@ -1,3 +1,7 @@
+<html>
+
+<title> Board </title>
+
 <?php
     include 'style.html';
     include 'db.php';
@@ -16,10 +20,6 @@
     $output=mysqli_fetch_assoc($result);
     $name=$output['name'];
 ?>
-
-<html>
-
-<title> Board </title>
 
 <body>
      <div class="flex-center position-ref full-height">
