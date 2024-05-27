@@ -81,12 +81,6 @@
         left: 400px;
         top: 125px;
 	}
-	.star {
-		width: 20px;
-		height: 20px;
-		position: absolute;
-		left: 0px;
-	}
 	.enter {
 		width: 90px;
         height: 35px;
@@ -96,6 +90,12 @@
 		position: absolute;
 		right: 0px;
 		cursor: pointer;
+	}
+	.star {
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		left: 0px;
 	}
 </style>
 
@@ -133,8 +133,8 @@
 				$areaid=$row['areaid'];
 				//echo "<br>Subject：" . $row['subject'];
 				echo "<h3> $areaname <h3>";
-				echo "<a href='collectArea.php?areaid=$areaid&userid=$userid'> <img src='star.png' alt='Button' class='star'> </a>";
 				echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='enter'> enter </button> </a>";
+				echo "<a href='collectArea.php?areaid=$areaid&userid=$userid'> <img src='star.png' alt='Button' class='star'> </a>";
 				echo "<br><hr><br>";
 			}
 			/*

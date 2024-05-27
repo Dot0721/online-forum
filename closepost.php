@@ -81,7 +81,8 @@
         $sql = "update post set postname='$violate',article='' where postid='$postid'";
         if (!mysqli_query($db, $sql)) {
             die(mysqli_error($con));
-        } else {
+        }
+        else {
             echo "
             <script>
                 setTimeout(function(){window.location.href='viewPostList.php?areaid=$areaid&userid=$userid';},200);

@@ -1,6 +1,5 @@
 <?php
     include "db.php";
-
     session_start();
     $userid = $_GET['userid'];
     $areaid = $_GET['areaid'];
