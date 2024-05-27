@@ -1,11 +1,11 @@
 <html>
-
-<title> All Areas </title>
-
-<?php
+	
+	<title> All Areas </title>
+	
+	<?php
 	include "db.php";
 	$userid = $_GET['userid'];
-?>
+	?>
 
 <style>
 	h1 {
@@ -19,8 +19,11 @@
 		position: relative;
 		left: 0;
 	}
+	a {
+		display: inline-block;
+	}
 	.login {
-        width: 100px;
+		width: 100px;
         height: 50px;
         color: white;
         font-size: 16;
@@ -84,30 +87,42 @@
         left: 20px;
 		cursor: pointer;
 	}
-	.main {
-		width: 500px;
-        font-size: 20px;
+	.cards {
+		display: flex;
+        top: 300px;
+		width: 80vw;
 		font-family: 'Nunito', sans-serif;
         letter-spacing: .125rem;
-        position: relative;
-        left: 400px;
-        top: 125px;
+        position: absolute;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 15px;
+	}
+	.box {
+		display: inline;
+		width: 200px;
+		height: 300px;
+		border: solid #333;
+		padding: 1em;
 	}
 	.enter {
-		width: 90px;
+		display: inline;
+		width: 150px;
         height: 35px;
 		color: white;
         background: black;
         border-radius: 5px;
-		position: absolute;
-		right: 0px;
+		position: relative;
 		cursor: pointer;
+		top: 10px;
 	}
 	.star {
 		width: 20px;
 		height: 20px;
-		position: absolute;
-		left: 0px;
+		position: relative;
+		left: 160px;
+		top: -40px;
 	}
 </style>
 
@@ -135,26 +150,35 @@
 	?>
 	<h1> All Areas </h1>
 	<p class="dir"> Choose an area to start chatting! </p>
-	<div class="main">
-		<?php
-			$sql = "select * from post_area";
-			$result = mysqli_query($db, $sql);
-			//從資料庫中撈留言紀錄並顯示出來
-			while ($row = mysqli_fetch_assoc($result)) {
-				$areaname=$row['areaname'];
-				$areaid=$row['areaid'];
-				//echo "<br>Subject：" . $row['subject'];
-				echo "<h3> $areaname <h3>";
-				echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='enter'> enter </button> </a>";
-				echo "<a href='collectArea.php?areaid=$areaid&userid=$userid'> <img src='star.png' alt='Button' class='star'> </a>";
-				echo "<br><hr><br>";
-			}
-			/*
-			echo "<br>";
-			echo '<div class="bottom left position-abs content">';
-			echo "There are " . mysqli_num_rows($result) . " messages.";
-			*/
-		?>
+	<div style=display:flex;justify-content:center;>
+		<div class="cards">
+			<?php
+				$sql = "select * from post_area";
+				$result = mysqli_query($db, $sql);
+				//從資料庫中撈留言紀錄並顯示出來
+				while ($row = mysqli_fetch_assoc($result)) {
+					$areaname=$row['areaname'];
+					$areaid=$row['areaid'];
+					echo "<div class='box'>";
+					echo "<h3> $areaname </h3>";
+					echo "<a href='collectArea.php?areaid=$areaid&userid=$userid' class='link'> <img src='star.png' alt='Favorite' class='star'> </a>";
+					// echo "<img src='star.png' alt='Favorite' class='star' onclick='location.href='pageurl.html';'";
+					echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid' class='link'> <button class='enter'> enter </button> </a>";
+					// echo "<button class='enter' onclick='viewPostList.php?areaid=$areaid&userid=$userid'> enter </button>";
+					echo "</div>";
+					//echo "<br>Subject：" . $row['subject'];
+					// echo "<h3> $areaname <h3>";
+					// echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='enter'> enter </button> </a>";
+					// echo "<a href='collectArea.php?areaid=$areaid&userid=$userid'> <img src='star.png' alt='Button' class='star'> </a>";
+					// echo "<br><hr><br>";
+				}
+				/*
+				echo "<br>";
+				echo '<div class="bottom left position-abs content">';
+				echo "There are " . mysqli_num_rows($result) . " messages.";
+				*/
+			?>
+		</div>
 	</div>
 </body>
 
