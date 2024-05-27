@@ -1,13 +1,14 @@
 <?php
     include 'db.php';
     include 'style.html';
+    
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $violate=$_POST['violate'];
         $postid = $_POST['postid'];
         $userid=$_POST['userid'];
         $areaid=$_POST['areaid'];
     }
-    else{
+    else {
         $postid=$_GET['postid'];
         $userid=$_GET['userid'];
         $areaid=$_GET['areaid'];
