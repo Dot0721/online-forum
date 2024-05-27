@@ -92,16 +92,18 @@
         width: 100px;
         height: 50px;
         color: white;
+        font-size: 16;
         background: black;
         border-radius: 5px;
         position: relative;
         top: 120px;
         cursor: pointer;
     }
-    .signin {
+    .login {
         width: 100px;
         height: 50px;
         color: white;
+        font-size: 16;
         background: black;
         border-radius: 5px;
         position: absolute;
@@ -112,7 +114,7 @@
 </style>
 
 <body>
-    <a href="index.php"> <button class="signin"> <b> Sign In </b> </button> </a>
+    <a href="index.php"> <button class="login"> <b> Login </b> </button> </a>
     <form name="signup" action="signup.php" method="post">
         <div>
             <h1> Create Your Account </h1>

@@ -8,7 +8,6 @@
         include 'db.php';
         $name = $_POST['name'];
         $password = $_POST['password'];
-
         if ($name && $password) {
             $sql = "select * from register_user where name = '$name' and password='$password'";
             $result = mysqli_query($db, $sql);
@@ -74,10 +73,11 @@
         position: relative;
         top: 100px;
     }
-    .signin {
+    .login {
         width: 100px;
         height: 50px;
         color: white;
+        font-size: 16;
         background: black;
         border-radius: 5px;
         position: relative;
@@ -85,8 +85,9 @@
         cursor: pointer;
     }
     .view {
-        width: 150px;
+        width: 170px;
         height: 50px;
+        font-size: 16;
         border: none;
         background: none;
         position: relative;
@@ -97,6 +98,7 @@
         width: 100px;
         height: 50px;
         color: white;
+        font-size: 16;
         background: black;
         border-radius: 5px;
         position: absolute;
@@ -114,7 +116,7 @@
             <p class="dir"> Welcome to Bubbles, sign in to get started. </p>
             <p> <input type="text" name="name" placeholder="User Name" class="name"> </p>
             <p> <input type=password name="password" placeholder="Password" class="passwd"> </p>
-            <button type="submit" name="submit" class="signin"> <b> Sign In </b> </button>
+            <button type="submit" name="submit" class="login"> <b> Login </b> </button>
         </div>
     </form>
     <div>
