@@ -60,6 +60,18 @@
         position: relative;
         top: 110px;
     }
+    .login {
+        width: 100px;
+        height: 50px;
+        color: white;
+        font-size: 16;
+        background: black;
+        border-radius: 5px;
+        position: fixed;
+        top: 40px;
+        right: 40px;
+        cursor: pointer;
+    }
     .dir {
         color: grey;
         font-size: 18;
@@ -97,18 +109,6 @@
         border-radius: 5px;
         position: relative;
         top: 120px;
-        cursor: pointer;
-    }
-    .login {
-        width: 100px;
-        height: 50px;
-        color: white;
-        font-size: 16;
-        background: black;
-        border-radius: 5px;
-        position: absolute;
-        top: 40px;
-        right: 60px;
         cursor: pointer;
     }
 </style>

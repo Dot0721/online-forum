@@ -1,11 +1,11 @@
 <html>
 	
-	<title> All Areas </title>
+<title> All Areas </title>
 	
-	<?php
+<?php
 	include "db.php";
 	$userid = $_GET['userid'];
-	?>
+?>
 
 <style>
 	h1 {
@@ -31,29 +31,21 @@
         font-size: 16;
         background: black;
         border-radius: 5px;
-        position: absolute;
+        position: fixed;
         top: 40px;
-        right: 60px;
+        right: 40px;
         cursor: pointer;
     }
-	.dir {
-		text-align: center;
-		font-size: 18;
-		font-family: 'Nunito', sans-serif;
-		color: grey;
-		position: relative;
-		top: 90px;
-	}
-	.logout {
+	.log-out {
         width: 100px;
         height: 50px;
         color: white;
         background: black;
         border-radius: 5px;
 		font-size: 16;
-        position: absolute;
+        position: fixed;
         top: 40px;
-        right: 60px;
+        right: 40px;
         cursor: pointer;
     }
 	.fav {
@@ -62,20 +54,20 @@
         background: none;
 		border: none;
 		font-size: 16;
-        position: absolute;
+        position: fixed;
         top: 40px;
-        right: 180px;
+        right: 160px;
         cursor: pointer;
 	}
-	.create_area {
+	.create-area {
 		width: 110px;
         height: 50px;
         background: none;
 		border: none;
 		font-size: 16;
-        position: absolute;
+        position: fixed;
         top: 40px;
-        right: 300px;
+        right: 280px;
         cursor: pointer;
 	}
 	.account {
@@ -84,10 +76,18 @@
 		font-size: 16px;
 		background: none;
 		border-radius: 5px;
-        position: absolute;
+        position: fixed;
         top: 40px;
-        left: 20px;
+        left: 40px;
 		cursor: pointer;
+	}
+	.dir {
+		text-align: center;
+		font-size: 18;
+		font-family: 'Nunito', sans-serif;
+		color: grey;
+		position: relative;
+		top: 90px;
 	}
 	.cards {
 		display: flex;
@@ -141,9 +141,9 @@
 			$row = mysqli_fetch_assoc($result);
 			echo "<a href='collectAreaList.php?userid=" . $userid . "'> <button class='fav'> <b> Favorite </b> </button> </a>";
 			if($row['permission_level']==3){
-				echo "<a href='createArea.php?userid=" . $userid . "'> <button class='create_area'> <b> Create Area </b> </button> </a>";
+				echo "<a href='createArea.php?userid=" . $userid . "'> <button class='create-area'> <b> Create Area </b> </button> </a>";
 			}
-			echo '<a href="index.php"> <button class="logout"> <b> Log out </b> </button> </a>';
+			echo '<a href="index.php"> <button class="log-out"> <b> Log out </b> </button> </a>';
 		}
 	?>
 	<?php

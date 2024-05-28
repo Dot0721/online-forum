@@ -32,9 +32,9 @@
         color: black;
         background: none;
         border: none;
-        position: absolute;
-        top: 5%;
-        left: 5%;
+        position: fixed;
+        top: 40px;
+        left: 40px;
         cursor: pointer;
     }
     .logout {
@@ -44,9 +44,9 @@
         color: white;
         background: black;
         border-radius: 5px;
-        position: absolute;
-        top: 5%;
-        right: 5%;
+        position: fixed;
+        top: 40px;
+        right: 40px;
         cursor: pointer;
     }
     .area-name {
