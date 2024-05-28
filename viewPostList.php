@@ -16,9 +16,21 @@
         font-size: 16;
         background: black;
         border-radius: 5px;
-        position: absolute;
+        position: fixed;
         top: 40px;
-        right: 60px;
+        right: 40px;
+        cursor: pointer;
+    }
+	.bubbles {
+        width: 100px;
+        height: 50px;
+        color: black;
+        font-size: 18;
+        background: none;
+		border: none;
+        position: fixed;
+        top: 40px;
+        left: 40px;
         cursor: pointer;
     }
 	.log-out {
@@ -28,33 +40,32 @@
         font-size: 16;
         background: black;
         border-radius: 5px;
-        position: absolute;
-        top: 5%;
-        right: 5%;
+        position: fixed;
+        top: 40px;
+        right: 40px;
         cursor: pointer;
     }
-	.last-page {
-        width: 100px;
+	.account {
+		width: 100px;
         height: 50px;
-        color: white;
-        font-size: 16;
-        background: black;
-        border-radius: 5px;
-        position: absolute;
-        top: 5%;
-        right: 15%;
-        cursor: pointer;
-    }
+		font-size: 16px;
+		background: none;
+		border-radius: 5px;
+        position: fixed;
+        top: 40px;
+        right: 160px;
+		cursor: pointer;
+	}
 	.write-post {
         width: 100px;
         height: 50px;
         color: black;
         font-size: 16;
         background: none;
-		border-radius: 5px;
-        position: absolute;
-        top: 5%;
-        right: 25%;
+		border: none;
+        position: fixed;
+        top: 40px;
+        right: 280px;
         cursor: pointer;
     }
 </style>
@@ -62,22 +73,20 @@
 <body>
     <?php
 		if (!$userid) {
-			echo "<a href='viewAreaList.php?userid=0'> <button class='last-page'> <b> Last page </b> </button> </a>";
+			echo "<a href='viewAreaList.php?userid=0'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<a href="index.php"> <button class="login"> <b> Login </b> </button> </a>';
 		}
 		else {
 			echo "<a href='board.php?userid=" . $userid . "&areaid=". $areaid ."'> <button class='write-post'> <b> Write Post </b> </button> </a>";
-			echo "<a href='viewAreaList.php?userid=". $userid . "'> <button class='last-page'> <b> Last page </b> </button> </a>";
+			echo "<a href='viewAreaList.php?userid=". $userid . "'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<a href="index.php"> <button class="log-out"> <b> Log out </b> </button> </a>';
 		}
 	?>
-	<div class="top-left home">
-		<?php
-			if($userid){
-				echo "<a href='userinfo.php?userid=" . $userid . "&areaid=" . $areaid . "&postid=0'>User</a>";
-			}
-		?>
-	 </div>
+	<?php
+		if($userid) {
+			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=" . $areaid . "&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
+		}
+	?>
 	<div class="PostList post full-height">
 	<?php
 		include "db.php";

@@ -26,21 +26,21 @@
         color: black;
         background: none;
         border: none;
-        position: absolute;
-        top: 5%;
-        left: 5%;
+        position: fixed;
+        top: 40px;
+        left: 40px;
         cursor: pointer;
     }
-    .logout {
+    .log-out {
         width: 100px;
         height: 50px;
         font-size: 16;
         color: white;
         background: black;
         border-radius: 5px;
-        position: absolute;
-        top: 5%;
-        right: 5%;
+        position: fixed;
+        top: 40px;
+        right: 40px;
         cursor: pointer;
     }
 	.account {
@@ -49,20 +49,20 @@
 		font-size: 16px;
 		background: none;
 		border-radius: 5px;
-        position: absolute;
-        top: 5%;
-        right: 15%;
+        position: fixed;
+        top: 40px;
+        right: 160px;
 		cursor: pointer;
 	}
-	.create_area {
+	.create-area {
 		width: 110px;
         height: 50px;
 		font-size: 16px;
 		background: none;
 		border: none;
-        position: absolute;
-        top: 5%;
-        right: 25%;
+        position: fixed;
+        top: 40px;
+        right: 280px;
 		cursor: pointer;
 	}
 	.main {
@@ -104,9 +104,9 @@
 			$row = mysqli_fetch_assoc($result);
 			echo "<a href='viewAreaList.php?userid=". $userid . "'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			if($row['permission_level']==3){
-				echo "<a href='createArea.php?userid=" . $userid . "'> <button class='create_area'> <b> Create Area </b> </button> </a>";
+				echo "<a href='createArea.php?userid=" . $userid . "'> <button class='create-area'> <b> Create Area </b> </button> </a>";
 			}
-			echo '<a href="index.php"> <button class="logout"> <b> Log out </b> </button> </a>';
+			echo '<a href="index.php"> <button class="log-out"> <b> Log out </b> </button> </a>';
 		}
 	?>
 	<?php

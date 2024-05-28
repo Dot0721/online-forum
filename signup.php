@@ -67,9 +67,9 @@
         font-size: 16;
         background: black;
         border-radius: 5px;
-        position: absolute;
-        top: 5%;
-        right: 5%;
+        position: fixed;
+        top: 40px;
+        right: 40px;
         cursor: pointer;
     }
     .dir {

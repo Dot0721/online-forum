@@ -35,21 +35,21 @@
         color: black;
         background: none;
         border: none;
-        position: absolute;
-        top: 5%;
-        left: 5%;
+        position: fixed;
+        top: 40px;
+        left: 40px;
         cursor: pointer;
     }
-    .logout {
+    .log-out {
         width: 100px;
         height: 50px;
         font-size: 16;
         color: white;
         background: black;
         border-radius: 5px;
-        position: absolute;
-        top: 5%;
-        right: 5%;
+        position: fixed;
+        top: 40px;
+        right: 40px;
         cursor: pointer;
     }
     .name {
@@ -102,7 +102,7 @@
 
 <body>
     <a href='viewAreaList.php?userid=<?=$userid?>'> <button class='bubbles'> <b> Bubbles </b> </button> </a>
-    <a href="index.php"> <button class="logout"> <b> Log out </b> </button> </a>
+    <a href="index.php"> <button class="log-out"> <b> Log out </b> </button> </a>
     <?php
         include 'db.php';
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
