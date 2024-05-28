@@ -21,6 +21,8 @@
 	}
 	a {
 		display: inline-block;
+		width: 0;
+		height: 0;
 	}
 	.login {
 		width: 100px;
@@ -108,7 +110,7 @@
 	}
 	.enter {
 		display: inline;
-		width: 150px;
+		width: 170px;
         height: 35px;
 		color: white;
         background: black;
@@ -116,6 +118,7 @@
 		position: relative;
 		cursor: pointer;
 		top: 10px;
+		left: 15px;
 	}
 	.star {
 		width: 20px;
