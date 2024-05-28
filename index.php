@@ -102,8 +102,8 @@
         background: black;
         border-radius: 5px;
         position: absolute;
-        top: 40px;
-        right: 60px;
+        top: 5%;
+        right: 5%;
         cursor: pointer;
     }
 </style>

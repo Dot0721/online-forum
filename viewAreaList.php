@@ -1,11 +1,11 @@
 <html>
 	
-	<title> All Areas </title>
+<title> All Areas </title>
 	
-	<?php
+<?php
 	include "db.php";
 	$userid = $_GET['userid'];
-	?>
+?>
 
 <style>
 	h1 {
@@ -30,8 +30,8 @@
         background: black;
         border-radius: 5px;
         position: absolute;
-        top: 40px;
-        right: 60px;
+        top: 5%;
+        right: 5%;
         cursor: pointer;
     }
 	.dir {
@@ -50,8 +50,8 @@
         border-radius: 5px;
 		font-size: 16;
         position: absolute;
-        top: 40px;
-        right: 60px;
+        top: 5%;
+        right: 5%;
         cursor: pointer;
     }
 	.fav {
@@ -61,8 +61,8 @@
 		border: none;
 		font-size: 16;
         position: absolute;
-        top: 40px;
-        right: 180px;
+        top: 5%;
+        right: 15%;
         cursor: pointer;
 	}
 	.create_area {
@@ -72,8 +72,8 @@
 		border: none;
 		font-size: 16;
         position: absolute;
-        top: 40px;
-        right: 300px;
+        top: 5%;
+        right: 25%;
         cursor: pointer;
 	}
 	.account {
@@ -83,8 +83,8 @@
 		background: none;
 		border-radius: 5px;
         position: absolute;
-        top: 40px;
-        left: 20px;
+        top: 5%;
+        left: 5%;
 		cursor: pointer;
 	}
 	.cards {

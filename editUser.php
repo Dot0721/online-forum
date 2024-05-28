@@ -26,7 +26,7 @@
         font-size: 50;
         font-family: 'Nunito', sans-serif;
         position: relative;
-        top: 110px;
+        top: 120px;
     }
     .bubbles {
         width: 100px;
@@ -61,7 +61,7 @@
         font-size: 18px;
         font-family: 'Nunito', sans-serif;
         position: relative;
-        top: 100px;
+        top: 110px;
     }
     .passwd {
         width: 300px;
@@ -72,7 +72,7 @@
         font-size: 18px;
         font-family: 'Nunito', sans-serif;
         position: relative;
-        top: 100px;
+        top: 110px;
     }
     .save {
         width: 100px;
@@ -82,7 +82,8 @@
         background: black;
         border-radius: 5px;
         position: relative;
-        top: 120px;
+        top: 130px;
+        left: 0%;
         cursor: pointer;
     }
     .rewrite {
@@ -93,7 +94,8 @@
         background: black;
         border-radius: 5px;
         position: relative;
-        top: 120px;
+        top: 130px;
+        right: 0%;
         cursor: pointer;
     }
 </style>
