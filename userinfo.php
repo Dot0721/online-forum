@@ -9,6 +9,13 @@
 ?>
 
 <style>
+	div {
+		text-align: center;
+		font-size: 30;
+		font-family: 'Nunito', sans-serif;
+		position: relative;
+		top: 180px;
+	}
 	.bubbles {
         width: 100px;
         height: 50px;
@@ -33,12 +40,6 @@
         right: 40px;
         cursor: pointer;
     }
-	.main {
-		text-align: center;
-		font-size: 30;
-		position: relative;
-		top: 40%;
-	}
 	.edit {
 		width: 250px;
 		height: 50px;
@@ -62,7 +63,7 @@
 			echo '<a href="index.php"> <button class="log-out"> <b> Log out </b> </button> </a>';
 		}
 	?>
-	<div class="main">
+	<div>
 		<?php
 			session_start();
 			include "db.php";
@@ -71,9 +72,9 @@
 			$_SESSION['userid'] = $userid = $_GET['userid'];
 			//從資料庫中撈留言紀錄並顯示出來
 			while ($row = mysqli_fetch_assoc($result)) {
-				echo "Name：" . $row['name'];
-				echo "<br>Password：" . $row['password'];
-				echo '<br><a href=" editUser.php?userid=' . $userid . '&areaid=' .$areaid.'&postid='.$postid.'"> <button class="edit"> Edit User Infomation </button> </a>';
+				echo "<b> User Name </b> <br>" . $row['name'];
+				echo "<br> <br> <b> Password </b> <br>" . $row['password'];
+				echo '<br> <a href=" editUser.php?userid=' . $userid . '&areaid=' .$areaid.'&postid='.$postid.'"> <button class="edit"> Edit Your Infomation </button> </a>';
 			}
 		?>
 	</div>

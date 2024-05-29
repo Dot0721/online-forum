@@ -15,15 +15,20 @@
 ?>
 
 <style>
-    div {
+    div, input {
         text-align: center;
     }
     h1 {
-        font: bold;
         font-size: 50;
         font-family: 'Nunito', sans-serif;
         position: relative;
         top: 110px;
+    }
+    h2 {
+        font-size: 28;
+        font-family: 'Nunito', sans-serif;
+        position: relative;
+        top: 100px;
     }
     .bubbles {
         width: 100px;
@@ -49,7 +54,7 @@
         right: 40px;
         cursor: pointer;
     }
-    .area-name {
+    .input-field {
         width: 300px;
         height: 50px;
         padding: 12px 16px;
@@ -58,18 +63,7 @@
         font-size: 18px;
         font-family: 'Nunito', sans-serif;
         position: relative;
-        top: 100px;
-    }
-    .manager-name {
-        width: 300px;
-        height: 50px;
-        padding: 12px 16px;
-        border: solid;
-        border-radius: 5px;
-        font-size: 18px;
-        font-family: 'Nunito', sans-serif;
-        position: relative;
-        top: 100px;
+        top: 90px;
     }
     .send {
         width: 100px;
@@ -90,9 +84,12 @@
     <form name="form1" action="createArea.php" method="post">
         <div>
             <h1> Create Area </h1>
-            <input type="hidden" name="userid" value="<?=$userid?>"> </p>
-            <p> <input type="text" name="areaname" placeholder="Area Name" class="area-name"> </p>
-            <p> <input type="text" name="manager" placeholder="Manager Name" class="manager-name"> </p>
+            <input type="hidden" name="userid" value="<?=$userid?>">
+            <h2> Area Name </h2>
+            <input type="text" name="areaname" placeholder="Enter Area Name" class="input-field">
+            <h2> Manager Name </h2>
+            <input type="text" name="manager" placeholder="Enter Manager Name" class="input-field">
+            <br>
             <button type="submit" name="submit" value="SEND" class="send"> <b> Send </b> </button>
         </div>
     </form>

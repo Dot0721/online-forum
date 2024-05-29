@@ -21,7 +21,7 @@
 ?>
 
 <style>
-    div {
+    div, input {
         text-align: center;
     }
     h1 {
@@ -31,10 +31,21 @@
         top: 110px;
     }
     h2 {
-        font-size: 30;
+        font-size: 28;
         font-family: 'Nunito', sans-serif;
         position: relative;
-        top: 120px;
+        top: 100px;
+    }
+    textarea {
+        width: 500px;
+        height: 100px;
+        padding: 12px 16px;
+        border: solid;
+        border-radius: 5px;
+        font-size: 18px;
+        font-family: 'Nunito', sans-serif;
+        position: relative;
+        top: 90px;
     }
     .bubbles {
         width: 100px;
@@ -60,7 +71,7 @@
         right: 40px;
         cursor: pointer;
     }
-    .post-name {
+    .input-field {
         width: 300px;
         height: 50px;
         padding: 12px 16px;
@@ -69,18 +80,7 @@
         font-size: 18px;
         font-family: 'Nunito', sans-serif;
         position: relative;
-        top: 100px;
-    }
-    .article {
-        width: 500px;
-        height: 100px;
-        padding: 12px 16px;
-        border: solid;
-        border-radius: 5px;
-        font-size: 18px;
-        font-family: 'Nunito', sans-serif;
-        position: relative;
-        top: 100px;
+        top: 90px;
     }
     .send {
         width: 100px;
@@ -104,9 +104,10 @@
             <input type="hidden" name="areaid" value="<?=$areaid?>"> 
             <h1> <?="Hi, " . $name . "!"?> </h1>
             <h2> Postname </h2>
-            <p> <input type="text" name="postname" class="post-name"> </p>
+            <input type="text" name="postname" placeholder="Enter Your Postname" class="input-field">
             <h2> Article </h2>
-            <p> <textarea name="article" class="article"> </textarea> </p>
+            <textarea name="article" placeholder="Enter Your content"></textarea>
+            <br>
             <button type="submit" name="submit" value="SEND" class="send"> <b> Send </b> </button>
         </div>
     </form>
@@ -135,7 +136,9 @@
                 </script>";
         }
     }
+    /*
     else {
         echo '<div class="success">Click <strong>Send</strong> when you\'re done.</div>';
     }
+    */
 ?>
