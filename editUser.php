@@ -170,7 +170,7 @@
             <input type="hidden" name="userid" value="<?=$rs['userid']?>">
             <input type="hidden" name="areaid" value="<?=$areaid?>">
             <p class="text">User name</p>
-            <p> <input type="text" name="name" class="name" > </p>
+            <p> <input type="text" name="name" value="<?=$rs['name']?>"class="name" > </p>
             <p class="text">Password</p>
             <p> <input type="text" name="password" class="passwd"> </p>
             <p class="text">Confirm password</p>
