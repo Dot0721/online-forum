@@ -109,6 +109,7 @@
 	.enter {
 		display: inline;
 		width: 100%;
+		height: fit-content;
 		color: white;
 		background: black;
 		border-radius: 5px;
