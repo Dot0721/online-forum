@@ -20,9 +20,7 @@
 		left: 0;
 	}
 	a {
-		display: inline-block;
-		width: 0;
-		height: 0;
+		text-decoration: none;
 	}
 	.login {
 		width: 100px;
@@ -106,26 +104,29 @@
 		width: 200px;
 		height: 300px;
 		border: solid #333;
-		padding: 1em;
+		padding: 2em;
 	}
 	.enter {
 		display: inline;
-		width: 170px;
-        height: 35px;
+		width: 100%;
 		color: white;
-        background: black;
-        border-radius: 5px;
-		position: relative;
+		background: black;
+		border-radius: 5px;
 		cursor: pointer;
-		top: 10px;
-		left: 15px;
+		padding: 5% 0;
+		text-align: center;
 	}
 	.star {
+		display: block;
 		width: 20px;
 		height: 20px;
 		position: relative;
-		left: 160px;
-		top: -40px;
+		left: 90%;
+		top: -2.5em;
+	}
+	.fit {
+		width: 100%;
+		height: 100%;
 	}
 </style>
 
@@ -164,9 +165,11 @@
 					$areaid=$row['areaid'];
 					echo "<div class='box'>";
 					echo "<h3> $areaname </h3>";
-					echo "<a href='collectArea.php?areaid=$areaid&userid=$userid' class='link'> <img src='star.png' alt='Favorite' class='star'> </a>";
+					echo "<a href='collectArea.php?areaid=$areaid&userid=$userid' class='star'> <img src='star.png' alt='Favorite' class='fit'	> </a>";
 					// echo "<img src='star.png' alt='Favorite' class='star' onclick='location.href='pageurl.html';'";
-					echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid' class='link'> <button class='enter'> enter </button> </a>";
+					echo "<div style=display:flex;justify-content:center;>
+							<a href='viewPostList.php?areaid=$areaid&userid=$userid' class='enter'> enter </a>
+						  </div>";
 					// echo "<button class='enter' onclick='viewPostList.php?areaid=$areaid&userid=$userid'> enter </button>";
 					echo "</div>";
 					//echo "<br>Subject：" . $row['subject'];
