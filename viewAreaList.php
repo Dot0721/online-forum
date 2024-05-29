@@ -89,11 +89,11 @@
 	}
 	.cards {
 		display: flex;
-        top: 300px;
+        top: 100px;
 		width: 80vw;
 		font-family: 'Nunito', sans-serif;
         letter-spacing: .125rem;
-        position: absolute;
+        position: relative;
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: center;
