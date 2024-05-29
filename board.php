@@ -1,9 +1,8 @@
 <html>
 
-<title> Board </title>
+<title> Write Post </title>
 
 <?php
-    include 'style.html';
     include 'db.php';
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $userid = $_POST['userid'];
@@ -21,45 +20,96 @@
     $name=$output['name'];
 ?>
 
-<body>
-     <div class="flex-center position-ref full-height">
-                <div class="top-right home">
-                        <a href='viewAreaList.php?userid=<?=$userid?>'>View</a>
-                        <a href="index.php">Logout</a>
-                </div>
-      <div class="content">
-                <div class="m-b-md">
-                    <form name="form1" action="board.php" method="post">
-                        <input type="hidden" name="userid" value="<?=$userid?>"> 
-                        <input type="hidden" name="areaid" value="<?=$areaid?>"> 
-                        	<p><strong><?="Hi, " . $name?></strong></p>
-                        	<p>Postname</p>
-                        	<p><input type="text" name="postname"></p>
-                        	<p>Article</p>
-                        	<p><textarea style="font-family: 'Nunito', sans-serif; font-size:20px; width:550px;height:100px;" name="article"></textarea></p>
-                        	<p><input type="submit" name="submit" value="SEND">
-                    <style>
-                        input {padding:5px 15px; background:#FFCCCC; border:0 none;
-                        cursor:pointer;
-                        -webkit-border-radius: 5px;
-                        border-radius: 5px; }
-                    </style>
-                        <input type="reset" name="Reset" value="RESET">
-                    <style>
-                        input {
-                            padding:5px 15px;
-                            background:#FFCCCC;
-                            border:0 none;
-                            cursor:pointer;
-                            -webkit-border-radius: 5px;
-                            border-radius: 5px;
-                            font-family: 'Nunito', sans-serif;
-                            font-size: 19px;
-                        }
-                    </style>
-                    </form>
-                </div>
+<style>
+    div {
+        text-align: center;
+    }
+    h1 {
+        font-size: 50;
+        font-family: 'Nunito', sans-serif;
+        position: relative;
+        top: 110px;
+    }
+    h2 {
+        font-size: 30;
+        font-family: 'Nunito', sans-serif;
+        position: relative;
+        top: 120px;
+    }
+    .bubbles {
+        width: 100px;
+        height: 50px;
+        font-size: 20;
+        color: black;
+        background: none;
+		border: none;
+        position: fixed;
+        top: 40px;
+        left: 40px;
+        cursor: pointer;
+    }
+    .log-out {
+        width: 100px;
+        height: 50px;
+        color: white;
+        font-size: 16;
+        background: black;
+        border-radius: 5px;
+        position: fixed;
+        top: 40px;
+        right: 40px;
+        cursor: pointer;
+    }
+    .post-name {
+        width: 300px;
+        height: 50px;
+        padding: 12px 16px;
+        border: solid;
+        border-radius: 5px;
+        font-size: 18px;
+        font-family: 'Nunito', sans-serif;
+        position: relative;
+        top: 100px;
+    }
+    .article {
+        width: 500px;
+        height: 100px;
+        padding: 12px 16px;
+        border: solid;
+        border-radius: 5px;
+        font-size: 18px;
+        font-family: 'Nunito', sans-serif;
+        position: relative;
+        top: 100px;
+    }
+    .send {
+        width: 100px;
+        height: 50px;
+        color: white;
+        font-size: 16;
+        background: black;
+        border-radius: 5px;
+        position: relative;
+        top: 120px;
+        cursor: pointer;
+    }
+</style>
 
+<body>
+    <a href='viewAreaList.php?userid=<?=$userid?>'> <button class="bubbles"> <b> Bubbles </b> </button> </a>
+    <a href="index.php"> <button class="log-out"> <b> Log out </b> </button> </a>
+    <form name="form1" action="board.php" method="post">
+        <div>
+            <input type="hidden" name="userid" value="<?=$userid?>"> 
+            <input type="hidden" name="areaid" value="<?=$areaid?>"> 
+            <h1> <?="Hi, " . $name . "!"?> </h1>
+            <h2> Postname </h2>
+            <p> <input type="text" name="postname" class="post-name"> </p>
+            <h2> Article </h2>
+            <p> <textarea name="article" class="article"> </textarea> </p>
+            <button type="submit" name="submit" value="SEND" class="send"> <b> Send </b> </button>
+        </div>
+    </form>
 </body>
 
 </html>
@@ -76,13 +126,13 @@
         $sql = "INSERT post(uid,aid, postname,article) VALUES ('$userid', '$areaid','$postname', '$article')";
         if (!mysqli_query($db, $sql)) {
             die(mysqli_error($db));
-        } else {
+        }
+        else {
         //若成功將留言存進資料庫，會自動跳轉到顯示留言的頁面
             echo "
-                    <script>
+                <script>
                     setTimeout(function(){window.location.href='viewPostList.php?userid=" . $userid . "&areaid=" . $areaid . "';},500);
-                    </script>";
-
+                </script>";
         }
     }
     else {

@@ -21,7 +21,7 @@
         left: 40px;
         cursor: pointer;
     }
-    .logout {
+    .log-out {
         width: 100px;
         height: 50px;
         font-size: 16;
@@ -59,7 +59,7 @@
 		}
 		else {
 			echo "<a href='viewAreaList.php?userid=".$userid."'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
-			echo '<a href="index.php"> <button class="logout"> <b> Log out </b> </button> </a>';
+			echo '<a href="index.php"> <button class="log-out"> <b> Log out </b> </button> </a>';
 		}
 	?>
 	<div class="main">

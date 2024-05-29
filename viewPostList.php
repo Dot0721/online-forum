@@ -9,6 +9,18 @@
 ?>
 
 <style>
+	.bubbles {
+        width: 100px;
+        height: 50px;
+        font-size: 20;
+        color: black;
+        background: none;
+		border: none;
+        position: fixed;
+        top: 40px;
+        left: 40px;
+        cursor: pointer;
+    }
 	.login {
         width: 100px;
         height: 50px;
@@ -19,18 +31,6 @@
         position: fixed;
         top: 40px;
         right: 40px;
-        cursor: pointer;
-    }
-	.bubbles {
-        width: 100px;
-        height: 50px;
-        color: black;
-        font-size: 18;
-        background: none;
-		border: none;
-        position: fixed;
-        top: 40px;
-        left: 40px;
         cursor: pointer;
     }
 	.log-out {

@@ -25,8 +25,8 @@
 	.login {
 		width: 100px;
         height: 50px;
-        color: white;
         font-size: 16;
+        color: white;
         background: black;
         border-radius: 5px;
         position: fixed;
@@ -37,10 +37,10 @@
 	.log-out {
         width: 100px;
         height: 50px;
+		font-size: 16;
         color: white;
         background: black;
         border-radius: 5px;
-		font-size: 16;
         position: fixed;
         top: 40px;
         right: 40px;

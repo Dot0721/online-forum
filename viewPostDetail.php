@@ -1,31 +1,73 @@
-<title>All messages</title>
+<html>
+
+<title> Post Detail </title>
+
 <?php
-include 'style.html';
-include "db.php";
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $postid = $_POST['postid'];
-    $text = $_POST['text'];
-    $userid=$_POST['userid'];
-    $areaid=$_POST['areaid'];
-}
-else{
-    $postid=$_GET['postid'];
-    $userid=$_GET['userid'];
-    $areaid=$_GET['areaid'];
-}
+	include 'style.html';
+	include "db.php";
+	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+		$postid = $_POST['postid'];
+		$text = $_POST['text'];
+		$userid=$_POST['userid'];
+		$areaid=$_POST['areaid'];
+	}
+	else{
+		$postid=$_GET['postid'];
+		$userid=$_GET['userid'];
+		$areaid=$_GET['areaid'];
+	}
 ?>
+
+<style>
+	.login {
+		width: 100px;
+        height: 50px;
+        font-size: 16;
+        color: white;
+        background: black;
+        border-radius: 5px;
+        position: fixed;
+        top: 40px;
+        right: 40px;
+        cursor: pointer;
+    }
+	.log-out {
+		width: 100px;
+        height: 50px;
+        font-size: 16;
+        color: white;
+        background: black;
+        border-radius: 5px;
+        position: fixed;
+        top: 40px;
+        right: 40px;
+        cursor: pointer;
+    }
+	.last-page {
+		width: 100px;
+        height: 50px;
+        font-size: 16;
+        color: white;
+        background: black;
+        border-radius: 5px;
+        position: fixed;
+        top: 40px;
+        right: 160px;
+        cursor: pointer;
+    }
+</style>	
+
 <body>
 	<div class="flex-center position-ref full-height">
-	<div class="top-right home">
-        <?php
-			echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'>Last page</a>";
-			if (!$userid) {
-				echo '<a href="index.php">Log in</a>';
-			}else{
-				echo '<a href="index.php">Log out</a>';
-			}
-		?>
-     </div>
+	<?php
+		echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='last-page'> <b> Last page </b> </button> </a>";
+		if (!$userid) {
+			echo '<a href="index.php"> <button class="login"> <b> Log in </b> </button> </a>';
+		}
+		else {
+			echo '<a href="index.php"> <button class="log-out"> <b> Log out </b> </button> </a>';
+		}
+	?>
 	 <div class="top-left home">
 		<?php
 			if($userid){
@@ -137,24 +179,26 @@ else{
 	</div>
 </div>
 <?php
-//送出留言後會執行下面這段程式碼
-if (isset($_POST['submit'])&&$_POST['text']!=null) {
-	echo '<div class="success">Added successfully ！</div>';
-	$postid = $_POST['postid'];
-    $text = $_POST['text'];
-    $userid=$_POST['userid'];
-    $areaid=$_POST['areaid'];
-	$sql = "INSERT INTO message(uid,pid,text) VALUES ('$userid', '$postid','$text')";
-	if (!mysqli_query($db, $sql)) {
-		die(mysqli_error($db));
-	} else {
-		echo "
-                <script>
-                	setTimeout(function(){window.location.href='viewPostDetail.php?userid=" . $userid . "&areaid=" . $areaid . "&postid=".$postid."';},500);
-                </script>";
+	//送出留言後會執行下面這段程式碼
+	if (isset($_POST['submit'])&&$_POST['text']!=null) {
+		echo '<div class="success">Added successfully ！</div>';
+		$postid = $_POST['postid'];
+		$text = $_POST['text'];
+		$userid=$_POST['userid'];
+		$areaid=$_POST['areaid'];
+		$sql = "INSERT INTO message(uid,pid,text) VALUES ('$userid', '$postid','$text')";
+		if (!mysqli_query($db, $sql)) {
+			die(mysqli_error($db));
+		}
+		else {
+			echo "
+				<script>
+					setTimeout(function(){window.location.href='viewPostDetail.php?userid=" . $userid . "&areaid=" . $areaid . "&postid=".$postid."';},500);
+				</script>";
 
+		}
 	}
-} 
 ?>
 </body>
+
 </html>
