@@ -175,12 +175,14 @@
 					echo "<div class='box'>";
 					echo 	"<h3> $areaname </h3>";
 					// Check if area is favorated by user
-					$sql = "select COUNT(*) as fav from collect_area where uid=$userid AND aid=$areaid";
-					$is_favCount = mysqli_query($db, $sql);
-					$is_fav = mysqli_fetch_assoc($is_favCount)['fav'] != 0;
-					// Choose image(star) to display
-					$star_style = "icon/star-" . ($is_fav ? "yellow" : "hollow") . ".svg" ;
-					echo 	"<a href='collectArea.php?areaid=$areaid&userid=$userid' class='star'> <img src=$star_style alt='Favorite' class='fit'	> </a>";
+					if ($userid) {
+						$sql = "select COUNT(*) as fav from collect_area where uid=$userid AND aid=$areaid";
+						$is_favCount = mysqli_query($db, $sql);
+						$is_fav = mysqli_fetch_assoc($is_favCount)['fav'] != 0;
+						// Choose image(star) to display
+						$star_style = "icon/star-" . ($is_fav ? "yellow" : "hollow") . ".svg" ;
+						echo 	"<a href='collectArea.php?areaid=$areaid&userid=$userid' class='star'> <img src=$star_style alt='Favorite' class='fit'	> </a>";
+					}
 					// Button to enter area
 					echo 	"<div class='centerbox'>
 								<a href='viewPostList.php?areaid=$areaid&userid=$userid' class='enter'> enter </a>
