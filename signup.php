@@ -50,7 +50,7 @@
 ?>
 
 <style>
-    div {
+    div, input {
         text-align: center;
     }
     h1 {
@@ -59,6 +59,12 @@
         font-family: 'Nunito', sans-serif;
         position: relative;
         top: 110px;
+    }
+    h2 {
+        font-size: 28;
+        font-family: 'Nunito', sans-serif;
+        position: relative;
+        top: 90px;
     }
     .login {
         width: 100px;
@@ -78,7 +84,7 @@
         position: relative;
         top: 90px;
     }
-    .name {
+    .input-field {
         width: 300px;
         height: 50px;
         padding: 12px 16px;
@@ -87,18 +93,7 @@
         font-size: 18px;
         font-family: 'Nunito', sans-serif;
         position: relative;
-        top: 100px;
-    }
-    .passwd {
-        width: 300px;
-        height: 50px;
-        padding: 12px 16px;
-        border: solid;
-        border-radius: 5px;
-        font-size: 18px;
-        font-family: 'Nunito', sans-serif;
-        position: relative;
-        top: 100px;
+        top: 80px;
     }
     .create {
         width: 100px;
@@ -108,7 +103,7 @@
         background: black;
         border-radius: 5px;
         position: relative;
-        top: 120px;
+        top: 110px;
         cursor: pointer;
     }
 </style>
@@ -119,8 +114,11 @@
         <div>
             <h1> Create Your Account </h1>
             <p class="dir"> Password should contains at least a number and an alphabet. </p>
-            <p> <input type="text" name="name" placeholder="User Name" class="name"> </p>
-            <p> <input type=password name="password" placeholder="Password" class="passwd"></p>
+            <h2> User Name </h2>
+            <input type="text" name="name" placeholder="Enter User Name" class="input-field">
+            <h2> Password </h2>
+            <input type=password name="password" placeholder="Enter Password" class="input-field">
+            <br>
             <button type="submit" name="submit" value="Sign up" class="create"> <b> Create </b> </button>
         </div>
     </form>
