@@ -22,6 +22,18 @@
 	a {
 		text-decoration: none;
 	}
+	.bubbles {
+        width: 100px;
+        height: 50px;
+        font-size: 20;
+        color: black;
+        background: none;
+        border: none;
+        position: fixed;
+        top: 40px;
+        left: 40px;
+        cursor: pointer;
+    }
 	.login {
 		width: 100px;
         height: 50px;
@@ -54,7 +66,7 @@
 		font-size: 16;
         position: fixed;
         top: 40px;
-        right: 160px;
+        right: 280px;
         cursor: pointer;
 	}
 	.create-area {
@@ -65,7 +77,7 @@
 		font-size: 16;
         position: fixed;
         top: 40px;
-        right: 280px;
+        right: 400px;
         cursor: pointer;
 	}
 	.account {
@@ -76,7 +88,7 @@
 		border-radius: 5px;
         position: fixed;
         top: 40px;
-        left: 40px;
+        right: 160px;
 		cursor: pointer;
 	}
 	.dir {
@@ -141,6 +153,7 @@
 	<?php
 		// Toolbar for non-member
 		if (!$userid) {
+			//echo "<a href='viewAreaList.php?userid=".$userid."'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<a href="index.php"> <button class="login"> <b> Login </b> </button> </a>';
 		}
 		// Toolbar for member
@@ -149,6 +162,7 @@
 			$sql ="select * from register_user where userid=$userid";
 			$result = mysqli_query($db,$sql);
 			$row = mysqli_fetch_assoc($result);
+			echo "<a href='viewAreaList.php?userid=".$userid."'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo "<a href='collectAreaList.php?userid=" . $userid . "'> <button class='fav'> <b> Favorite </b> </button> </a>";
 			echo '<a href="index.php"> <button class="log-out"> <b> Log out </b> </button> </a>';
 			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
