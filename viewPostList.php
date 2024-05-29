@@ -75,15 +75,12 @@
 		cursor: pointer;
 	}
 	.write-post {
-        width: 100px;
+        width: 8em;
         height: 50px;
-        color: black;
+        color: white;
         font-size: 16;
-        background: none;
-		border: none;
-        position: fixed;
-        top: 40px;
-        right: 280px;
+        background: black;
+		border-radius: 5px;
         cursor: pointer;
     }
 	.postlist {
@@ -113,7 +110,6 @@
 			echo '<a href="index.php"> <button class="login"> <b> Login </b> </button> </a>';
 		}
 		else {
-			echo "<a href='board.php?userid=" . $userid . "&areaid=". $areaid ."'> <button class='write-post'> <b> Write Post </b> </button> </a>";
 			echo "<a href='viewAreaList.php?userid=". $userid . "'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<a href="index.php"> <button class="log-out"> <b> Log out </b> </button> </a>';
 		}
@@ -134,7 +130,11 @@
 		$_SESSION['userid'] = $userid = $_GET['userid'];
 		//從資料庫中撈留言紀錄並顯示出來
 		echo "<div style=display:flex;justify-content:center;>";
-		echo "<div class='postlist'> <hr>";
+		echo "<div class='postlist'>";
+		if ($userid) {
+			echo "<a href='board.php?userid=" . $userid . "&areaid=". $areaid ."'> <button class='write-post'> <b> + New Post </b> </button> </a>";
+		}
+		echo "<hr>";
 		while ($row = mysqli_fetch_assoc($result)) {
 			$postname=$row['postname'];
 			$postid=$row['postid'];
