@@ -116,10 +116,10 @@
             <br>
             <button type="submit" name="submit" class="login"> <b> Login </b> </button>
             <br>
-            <a href="viewAreaList.php?userid="> <button class="view"> <b> View as Anonymous </b> </button> </a>
         </div>
     </form>
     <div>
+        <a href="viewAreaList.php?userid="> <button class="view"> <b> View as Anonymous </b> </button> </a>
     </div>
 </body>
 

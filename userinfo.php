@@ -56,7 +56,7 @@
 <body>
 	<?php
 		if (!$userid) {
-			echo '<a href="index.php">Log in</a>';
+			echo '<a href="index.php"> Log in </a>';
 		}
 		else {
 			echo "<a href='viewAreaList.php?userid=".$userid."'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
