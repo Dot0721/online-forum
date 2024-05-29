@@ -143,13 +143,9 @@
 			echo "<hr>";
 		}
 		echo "</div> </div>";
-		/*
-		echo "<br>";
-		echo '<div class="bottom left position-abs content">';
-		echo "There are " . mysqli_num_rows($result) . " messages.";
-		*/
 	?>
 </div>
+<br>
 </body>
 
 </html>
