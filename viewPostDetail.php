@@ -5,6 +5,7 @@
 <?php
 	include 'style.html';
 	include "db.php";
+	session_start();
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$postid = $_POST['postid'];
 		$text = $_POST['text'];
@@ -78,7 +79,6 @@
 </div>
 <div class="note full-height">
 	<?php
-		session_start();
 		$mysql="select manageid from post_area where areaid=$areaid";
 		$find = mysqli_query($db, $mysql);
 		$findmanage = mysqli_fetch_assoc($find);
