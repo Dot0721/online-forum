@@ -101,8 +101,8 @@
 	}
 	.box {
 		display: inline;
-		width: 200px;
-		height: 300px;
+		width: 10em;
+		height: 12em;
 		border: solid #333;
 		padding: 2em;
 	}
@@ -115,6 +115,8 @@
 		cursor: pointer;
 		padding: 5% 0;
 		text-align: center;
+		position: relative;
+		bottom: -3em;
 	}
 	.star {
 		display: block;
@@ -128,61 +130,62 @@
 		width: 100%;
 		height: 100%;
 	}
+	.centerbox {
+		display: flex;
+		justify-content: center;
+	}
 </style>
 
 <body>
 	<?php
+		// Toolbar for non-member
 		if (!$userid) {
 			echo '<a href="index.php"> <button class="login"> <b> Login </b> </button> </a>';
 		}
+		// Toolbar for member
 		else {
-			//echo "<a href='board.php?name=" . $name . "'>Write some messages</a>";
+			// Get user info from db
 			$sql ="select * from register_user where userid=$userid";
 			$result = mysqli_query($db,$sql);
 			$row = mysqli_fetch_assoc($result);
 			echo "<a href='collectAreaList.php?userid=" . $userid . "'> <button class='fav'> <b> Favorite </b> </button> </a>";
+			echo '<a href="index.php"> <button class="log-out"> <b> Log out </b> </button> </a>';
+			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
+			// Give access to create area if admin
 			if($row['permission_level']==3){
 				echo "<a href='createArea.php?userid=" . $userid . "'> <button class='create-area'> <b> Create Area </b> </button> </a>";
 			}
-			echo '<a href="index.php"> <button class="log-out"> <b> Log out </b> </button> </a>';
 		}
 	?>
-	<?php
-		if($userid){
-			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
-		}
-	?>
+	<!-- Heading -->
 	<h1> All Areas </h1>
 	<p class="dir"> Choose an area to start chatting! </p>
-	<div style=display:flex;justify-content:center;>
+	<div class="centerbox">
 		<div class="cards">
 			<?php
+				// Find area info from db
 				$sql = "select * from post_area";
 				$result = mysqli_query($db, $sql);
-				//從資料庫中撈留言紀錄並顯示出來
+				// Show every area
 				while ($row = mysqli_fetch_assoc($result)) {
 					$areaname=$row['areaname'];
 					$areaid=$row['areaid'];
+					// Container for each area
 					echo "<div class='box'>";
-					echo "<h3> $areaname </h3>";
-					echo "<a href='collectArea.php?areaid=$areaid&userid=$userid' class='star'> <img src='star.png' alt='Favorite' class='fit'	> </a>";
-					// echo "<img src='star.png' alt='Favorite' class='star' onclick='location.href='pageurl.html';'";
-					echo "<div style=display:flex;justify-content:center;>
-							<a href='viewPostList.php?areaid=$areaid&userid=$userid' class='enter'> enter </a>
-						  </div>";
-					// echo "<button class='enter' onclick='viewPostList.php?areaid=$areaid&userid=$userid'> enter </button>";
+					echo 	"<h3> $areaname </h3>";
+					// Check if area is favorated by user
+					$sql = "select COUNT(*) as fav from collect_area where uid=$userid AND aid=$areaid";
+					$is_favCount = mysqli_query($db, $sql);
+					$is_fav = mysqli_fetch_assoc($is_favCount)['fav'] != 0;
+					// Choose image(star) to display
+					$star_style = "icon/star-" . ($is_fav ? "yellow" : "hollow") . ".svg" ;
+					echo 	"<a href='collectArea.php?areaid=$areaid&userid=$userid' class='star'> <img src=$star_style alt='Favorite' class='fit'	> </a>";
+					// Button to enter area
+					echo 	"<div class='centerbox'>
+								<a href='viewPostList.php?areaid=$areaid&userid=$userid' class='enter'> enter </a>
+						  	</div>";
 					echo "</div>";
-					//echo "<br>Subject：" . $row['subject'];
-					// echo "<h3> $areaname <h3>";
-					// echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='enter'> enter </button> </a>";
-					// echo "<a href='collectArea.php?areaid=$areaid&userid=$userid'> <img src='star.png' alt='Button' class='star'> </a>";
-					// echo "<br><hr><br>";
 				}
-				/*
-				echo "<br>";
-				echo '<div class="bottom left position-abs content">';
-				echo "There are " . mysqli_num_rows($result) . " messages.";
-				*/
 			?>
 		</div>
 	</div>
