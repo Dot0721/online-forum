@@ -3,6 +3,10 @@
 <title> Login </title>
 
 <?php
+    include 'NewStyle.html';
+?>
+
+<?php
     header("Content-Type: text/html; charset=utf8");
     if (isset($_POST['submit'])) {
         include 'db.php';
@@ -35,33 +39,8 @@
 ?>
 
 <style>
-    div, input{
+    div {
         text-align: center;
-    }
-    h1 {
-        font: bold;
-        font-size: 50;
-        font-family: 'Nunito', sans-serif;
-        position: relative;
-        top: 110px;
-    }
-    h2 {
-        font-size: 28;
-        font-family: 'Nunito', sans-serif;
-        position: relative;
-        top: 90px;
-    }
-    .sign-up {
-        width: 100px;
-        height: 50px;
-        color: white;
-        font-size: 16;
-        background: black;
-        border-radius: 5px;
-        position: fixed;
-        top: 40px;
-        right: 40px;
-        cursor: pointer;
     }
     .dir {
         color: grey;
@@ -104,7 +83,7 @@
 </style>
 
 <body>
-    <a href="signup.php"> <button class="sign-up"> <b> Sign Up </b> </button> </a>
+    <a href="signup.php"> <button class="upper-right-button"> <b> Sign Up </b> </button> </a>
     <form name="login" action="index.php" method="post">
         <div>
             <h1> Welcome to Bubbles! </h1>
