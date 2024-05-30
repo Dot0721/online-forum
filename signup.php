@@ -2,6 +2,10 @@
 
 <title> Sign up </title>
 
+<?php
+    include 'NewStyle.html';
+?>
+
 <!-- 留言者按下Signup後接著會執行以下程式碼 -->
 <?php
     header("Content-Type: text/html; charset=utf8");
@@ -53,31 +57,6 @@
     div, input {
         text-align: center;
     }
-    h1 {
-        font: bold;
-        font-size: 50;
-        font-family: 'Nunito', sans-serif;
-        position: relative;
-        top: 110px;
-    }
-    h2 {
-        font-size: 28;
-        font-family: 'Nunito', sans-serif;
-        position: relative;
-        top: 90px;
-    }
-    .login {
-        width: 100px;
-        height: 50px;
-        color: white;
-        font-size: 16;
-        background: black;
-        border-radius: 5px;
-        position: fixed;
-        top: 40px;
-        right: 40px;
-        cursor: pointer;
-    }
     .dir {
         color: grey;
         font-size: 18;
@@ -109,7 +88,7 @@
 </style>
 
 <body>
-    <a href="index.php"> <button class="login"> <b> Login </b> </button> </a>
+    <a href="index.php"> <button class="upper-right-button"> <b> Login </b> </button> </a>
     <form name="signup" action="signup.php" method="post">
         <div>
             <h1> Create Your Account </h1>

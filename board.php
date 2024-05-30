@@ -71,6 +71,18 @@
         right: 40px;
         cursor: pointer;
     }
+    .last-page {
+		width: 100px;
+        height: 50px;
+        font-size: 16;
+        color: white;
+        background: black;
+        border-radius: 5px;
+        position: fixed;
+        top: 40px;
+        right: 160px;
+        cursor: pointer;
+    }
     .input-field {
         width: 300px;
         height: 50px;
@@ -98,6 +110,9 @@
 <body>
     <a href='viewAreaList.php?userid=<?=$userid?>'> <button class="bubbles"> <b> Bubbles </b> </button> </a>
     <a href="index.php"> <button class="log-out"> <b> Log out </b> </button> </a>
+    <?php
+        echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='last-page'> <b> Last page </b> </button> </a>";
+    ?>
     <form name="form1" action="board.php" method="post">
         <div>
             <input type="hidden" name="userid" value="<?=$userid?>"> 
