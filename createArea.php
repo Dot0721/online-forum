@@ -22,34 +22,6 @@
     div {
         text-align: center;
     }
-    h2 {
-        font-size: 28;
-        font-family: 'Nunito', sans-serif;
-        position: relative;
-        top: 100px;
-    }
-    .input-field {
-        width: 300px;
-        height: 50px;
-        padding: 12px 16px;
-        border: solid;
-        border-radius: 5px;
-        font-size: 18px;
-        font-family: 'Nunito', sans-serif;
-        position: relative;
-        top: 90px;
-    }
-    .send {
-        width: 100px;
-        height: 50px;
-        color: white;
-        font-size: 16;
-        background: black;
-        border-radius: 5px;
-        position: relative;
-        top: 120px;
-        cursor: pointer;
-    }
 </style>
 
 <body>
@@ -59,12 +31,13 @@
         <div>
             <h1> Create Area </h1>
             <input type="hidden" name="userid" value="<?=$userid?>">
+            <p class="dir"> Create an area and assign a manager </p>
             <h2> Area Name </h2>
             <input type="text" name="areaname" placeholder="Enter Area Name" class="input-field">
             <h2> Manager Name </h2>
             <input type="text" name="manager" placeholder="Enter Manager Name" class="input-field">
             <br>
-            <button type="submit" name="submit" value="SEND" class="send"> <b> Send </b> </button>
+            <button type="submit" name="submit" value="SEND" class="submit"> <b> Send </b> </button>
         </div>
     </form>
 </body>

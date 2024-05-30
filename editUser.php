@@ -26,23 +26,6 @@
     div {
         text-align: center;
     }
-    .dir {
-        color: grey;
-        font-size: 18;
-        position: relative;
-        top: 90px;
-    }
-    .input-field {
-        width: 300px;
-        height: 50px;
-        padding: 12px 16px;
-        border: solid;
-        border-radius: 5px;
-        font-size: 18px;
-        font-family: 'Nunito', sans-serif;
-        position: relative;
-        top: 80px;
-    }
     .save {
         width: 100px;
         height: 50px;
@@ -51,7 +34,7 @@
         background: black;
         border-radius: 5px;
         position: relative;
-        top: 110px;
+        top: 100px;
         cursor: pointer;
     }
     .rewrite {
@@ -62,7 +45,7 @@
         background: black;
         border-radius: 5px;
         position: relative;
-        top: 110px;
+        top: 100px;
         cursor: pointer;
     }
 </style>
@@ -99,7 +82,7 @@
             <button type="reset" name="Reset" value="REWRITE" class="rewrite"> <b> Rewrite </b> </button>
         </div>
     </form>
-    <br>
+    <footer></footer>
 </body>
 
 </html>

@@ -8,7 +8,7 @@
 
 <!-- 留言者按下Signup後接著會執行以下程式碼 -->
 <?php
-    header("Content-Type: text/html; charset=utf8");
+    //header("Content-Type: text/html; charset=utf8");
     if (isset($_POST['submit'])) { 
         include 'db.php';
         $name = $_POST['name'];
@@ -54,36 +54,8 @@
 ?>
 
 <style>
-    div, input {
+    div {
         text-align: center;
-    }
-    .dir {
-        color: grey;
-        font-size: 18;
-        position: relative;
-        top: 90px;
-    }
-    .input-field {
-        width: 300px;
-        height: 50px;
-        padding: 12px 16px;
-        border: solid;
-        border-radius: 5px;
-        font-size: 18px;
-        font-family: 'Nunito', sans-serif;
-        position: relative;
-        top: 80px;
-    }
-    .create {
-        width: 100px;
-        height: 50px;
-        color: white;
-        font-size: 16;
-        background: black;
-        border-radius: 5px;
-        position: relative;
-        top: 110px;
-        cursor: pointer;
     }
 </style>
 
@@ -98,7 +70,7 @@
             <h2> Password </h2>
             <input type=password name="password" placeholder="Enter Password" class="input-field">
             <br>
-            <button type="submit" name="submit" value="Sign up" class="create"> <b> Create </b> </button>
+            <button type="submit" name="submit" value="Sign up" class="submit"> <b> Create </b> </button>
         </div>
     </form>
 </body>
