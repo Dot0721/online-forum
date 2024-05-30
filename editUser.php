@@ -19,15 +19,20 @@
 ?>
 
 <style>
-    div {
+    div, input {
         text-align: center;
     }
     h1 {
-        font: bold;
         font-size: 50;
         font-family: 'Nunito', sans-serif;
         position: relative;
-        top: 120px;
+        top: 110px;
+    }
+    h2 {
+        font-size: 28;
+        font-family: 'Nunito', sans-serif;
+        position: relative;
+        top: 90px;
     }
     .bubbles {
         width: 100px;
@@ -41,21 +46,6 @@
         left: 40px;
         cursor: pointer;
     }
-    .warn {
-        width: 624px;
-        height: 30px;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 20px;
-        color: #828282;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-top: auto; 
-    }
     .log-out {
         width: 100px;
         height: 50px;
@@ -68,19 +58,13 @@
         right: 40px;
         cursor: pointer;
     }
-    .text{
-        width: 100px;
-        height: 30px;
-        color: black;
-        justify-content: center;
+    .dir {
+        color: grey;
+        font-size: 18;
         position: relative;
-        padding: 0;
-        left: 50%; 
-        transform: translateX(-50%);
-        font-family: 'Nunito', sans-serif;
-        top: 110px;
+        top: 90px;
     }
-    .name {
+    .input-field {
         width: 300px;
         height: 50px;
         padding: 12px 16px;
@@ -89,18 +73,7 @@
         font-size: 18px;
         font-family: 'Nunito', sans-serif;
         position: relative;
-        top: 110px;
-    }
-    .passwd {
-        width: 300px;
-        height: 50px;
-        padding: 12px 16px;
-        border: solid;
-        border-radius: 5px;
-        font-size: 18px;
-        font-family: 'Nunito', sans-serif;
-        position: relative;
-        top: 110px;
+        top: 80px;
     }
     .save {
         width: 100px;
@@ -110,8 +83,7 @@
         background: black;
         border-radius: 5px;
         position: relative;
-        top: 130px;
-        left: 0%;
+        top: 110px;
         cursor: pointer;
     }
     .rewrite {
@@ -122,30 +94,9 @@
         background: black;
         border-radius: 5px;
         position: relative;
-        top: 130px;
-        right: 0%;
+        top: 110px;
         cursor: pointer;
     }
-    .warning {
-        width: 100%; /* 設置寬度佔滿整個頁面 */
-        height: 30px;
-        font-family: 'Inter', sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 30px; /* 確保行高與高度相同 */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: #ffffff; /* 白色文字 */
-        background-color: #ff0000; /* 紅色背景 */
-        position: fixed; /* 固定位置 */
-        top: 0; /* 固定在頂部 */
-        left: 0; /* 從左邊開始 */
-        z-index: 1000; /* 確保在其他元素上方 */
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* 添加陰影 */
-}
 </style>
 
 <body>
@@ -165,20 +116,22 @@
     <form name="form1" action="editUser.php" method="post">
         <div>
             <h1> Edit User Information </h1>
-            <p class="warn">Password should contain at least a number and an alphabet.</p>
+            <p class="dir"> Password should contain at least a number and an alphabet. </p>
             <input type="hidden" name="postid" value="<?=$postid?>">
             <input type="hidden" name="userid" value="<?=$rs['userid']?>">
             <input type="hidden" name="areaid" value="<?=$areaid?>">
-            <p class="text">User name</p>
-            <p> <input type="text" name="name" value="<?=$rs['name']?>"class="name" > </p>
-            <p class="text">Password</p>
-            <p> <input type="text" name="password" class="passwd"> </p>
-            <p class="text">Confirm password</p>
-            <p> <input type="text" name="conpass"  class="passwd"> </p>
+            <h2> User name </h2>
+            <input type="text" name="name" value="<?=$rs['name']?>"class="input-field" >
+            <h2> Password </h2>
+            <input type="text" name="password" placeholder="Enter Your New Password" class="input-field">
+            <h2> Confirm password </h2>
+            <input type="text" name="conpass" placeholder="Enter Your Password Again" class="input-field">
+            <br>
             <button type="submit" name="submit" value="SAVE" class="save"> <b> Save </b> </button>
             <button type="reset" name="Reset" value="REWRITE" class="rewrite"> <b> Rewrite </b> </button>
         </div>
     </form>
+    <br>
 </body>
 
 </html>
