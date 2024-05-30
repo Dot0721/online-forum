@@ -3,7 +3,7 @@
 <title> Edit User Information </title>
 
 <?php
-    include "NewStyle.html";
+    include "style.html";
 ?>
 
 <?php

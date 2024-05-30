@@ -3,7 +3,7 @@
 <title> Sign up </title>
 
 <?php
-    include 'NewStyle.html';
+    include 'style.html';
 ?>
 
 <!-- 留言者按下Signup後接著會執行以下程式碼 -->

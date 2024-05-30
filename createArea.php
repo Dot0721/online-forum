@@ -3,7 +3,7 @@
 <title> Create Area </title>
 
 <?php
-    include "NewStyle.html";
+    include "style.html";
 ?>
 
 <?php

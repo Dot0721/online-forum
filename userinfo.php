@@ -3,7 +3,7 @@
 <title> User Infomation </title>
 
 <?php
-	include "NewStyle.html";
+	include "style.html";
 ?>
 
 <?php
@@ -45,7 +45,7 @@
 	?>
 	<div>
 		<?php
-			session_start();
+			// session_start();
 			include "db.php";
 			$sql = "select * from register_user where userid = '$userid'";
 			$result = mysqli_query($db, $sql);

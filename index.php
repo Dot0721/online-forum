@@ -3,11 +3,11 @@
 <title> Login </title>
 
 <?php
-    include 'NewStyle.html';
+    include 'style.html';
 ?>
 
 <?php
-    header("Content-Type: text/html; charset=utf8");
+    //header("Content-Type: text/html; charset=utf8");
     if (isset($_POST['submit'])) {
         include 'db.php';
         $name = $_POST['name'];
