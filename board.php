@@ -3,6 +3,10 @@
 <title> Write Post </title>
 
 <?php
+    include "NewStyle.html";
+?>
+
+<?php
     include 'db.php';
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $userid = $_POST['userid'];
@@ -21,14 +25,8 @@
 ?>
 
 <style>
-    div, input {
+    div {
         text-align: center;
-    }
-    h1 {
-        font-size: 50;
-        font-family: 'Nunito', sans-serif;
-        position: relative;
-        top: 110px;
     }
     h2 {
         font-size: 28;
@@ -46,30 +44,6 @@
         font-family: 'Nunito', sans-serif;
         position: relative;
         top: 90px;
-    }
-    .bubbles {
-        width: 100px;
-        height: 50px;
-        font-size: 20;
-        color: black;
-        background: none;
-		border: none;
-        position: fixed;
-        top: 40px;
-        left: 40px;
-        cursor: pointer;
-    }
-    .log-out {
-        width: 100px;
-        height: 50px;
-        color: white;
-        font-size: 16;
-        background: black;
-        border-radius: 5px;
-        position: fixed;
-        top: 40px;
-        right: 40px;
-        cursor: pointer;
     }
     .last-page {
 		width: 100px;
@@ -109,7 +83,7 @@
 
 <body>
     <a href='viewAreaList.php?userid=<?=$userid?>'> <button class="bubbles"> <b> Bubbles </b> </button> </a>
-    <a href="index.php"> <button class="log-out"> <b> Log out </b> </button> </a>
+    <a href="index.php"> <button class="upper-right-button"> <b> Log out </b> </button> </a>
     <?php
         echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='last-page'> <b> Last page </b> </button> </a>";
     ?>
