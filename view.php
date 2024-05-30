@@ -1,5 +1,5 @@
-
 <title>All messages</title>
+
 <?php
 include 'style.html';
 $name = $_GET['name'];

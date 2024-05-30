@@ -3,76 +3,14 @@
 <title> All Posts </title>
 
 <?php
-	// include 'style.html';
+	include 'style.html';
 	$userid = $_GET['userid'];
 	$areaid=$_GET['areaid'];
 ?>
 
 <style>
-	h1 {
-		text-align: center;
-		font-size: 50;
-		font-family: 'Nunito', sans-serif;
-		position: relative;
-		top: 100px;
-	}
 	hr {
 		width: 80%;
-	}
-	.dir {
-		text-align: center;
-		font-size: 18;
-		font-family: 'Nunito', sans-serif;
-		color: grey;
-		position: relative;
-		top: 90px;
-	}
-	.bubbles {
-        width: 100px;
-        height: 50px;
-        font-size: 20;
-        color: black;
-        background: none;
-		border: none;
-        position: fixed;
-        top: 40px;
-        left: 40px;
-        cursor: pointer;
-    }
-	.login {
-        width: 100px;
-        height: 50px;
-        color: white;
-        font-size: 16;
-        background: black;
-        border-radius: 5px;
-        position: fixed;
-        top: 40px;
-        right: 40px;
-        cursor: pointer;
-    }
-	.log-out {
-        width: 100px;
-        height: 50px;
-        color: white;
-        font-size: 16;
-        background: black;
-        border-radius: 5px;
-        position: fixed;
-        top: 40px;
-        right: 40px;
-        cursor: pointer;
-    }
-	.account {
-		width: 100px;
-        height: 50px;
-		font-size: 16px;
-		background: none;
-		border-radius: 5px;
-        position: fixed;
-        top: 40px;
-        right: 160px;
-		cursor: pointer;
 	}
 	.write-post {
         width: 8em;
@@ -107,13 +45,14 @@
     <?php
 		if (!$userid) {
 			echo "<a href='viewAreaList.php?userid=0'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
-			echo '<a href="index.php"> <button class="login"> <b> Login </b> </button> </a>';
+			echo '<a href="index.php"> <button class="upper-right-button"> <b> Login </b> </button> </a>';
 		}
 		else {
 			echo "<a href='viewAreaList.php?userid=". $userid . "'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
-			echo '<a href="index.php"> <button class="log-out"> <b> Log out </b> </button> </a>';
+			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
 		}
 	?>
+	<a href='viewAreaList.php?userid=<?=$userid?>'> <button class='last-page'> <b> Last Page </b> </button> </a>
 	<?php
 		if($userid) {
 			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=" . $areaid . "&postid=0'> <button class='account'> <b> Account </b> </button> </a>";

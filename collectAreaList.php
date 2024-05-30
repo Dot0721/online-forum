@@ -95,7 +95,7 @@
 	<?php
 		// Toolbar for non-member
 		if (!$userid) {
-			echo '<a href="index.php"> Log in </a>';
+			echo '<a href="index.php"> Login </a>';
 		}
 		// Toolbar for member
 		else {
@@ -103,13 +103,14 @@
 			$result = mysqli_query($db,$sql);
 			$row = mysqli_fetch_assoc($result);
 			echo "<a href='viewAreaList.php?userid=". $userid . "'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
-			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log out </b> </button> </a>';
+			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
 			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
-			if($row['permission_level']==3){
+			/*if($row['permission_level']==3){
 				echo "<a href='createArea.php?userid=" . $userid . "'> <button class='create-area'> <b> Create Area </b> </button> </a>";
-			}
+			}*/
 		}
 	?>
+	<a href='viewAreaList.php?userid=<?=$userid?>'> <button class='last-page'> <b> Last Page </b> </button> </a>
 	<h1> Favorite Areas </h1>
 	<p class="dir"> Choose an area to start chatting! </p>
 	<div class="centerbox">

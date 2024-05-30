@@ -52,7 +52,7 @@
 
 <body>
     <a href='viewAreaList.php?userid=<?=$userid?>'> <button class='bubbles'> <b> Bubbles </b> </button> </a>
-    <a href="index.php"> <button class="upper-right-button"> <b> Log out </b> </button> </a>
+    <a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>
     <?php
         include 'db.php';
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {

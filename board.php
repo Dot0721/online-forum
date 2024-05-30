@@ -25,23 +25,11 @@
     div {
         text-align: center;
     }
-    .last-page {
-		width: 100px;
-        height: 50px;
-        font-size: 16;
-        color: black;
-        background: none;
-        border: none;
-        position: fixed;
-        top: 40px;
-        right: 280px;
-        cursor: pointer;
-    }
 </style>
 
 <body>
     <a href='viewAreaList.php?userid=<?=$userid?>'> <button class="bubbles"> <b> Bubbles </b> </button> </a>
-    <a href="index.php"> <button class="upper-right-button"> <b> Log out </b> </button> </a>
+    <a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>
     <?php
         echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
         echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='last-page'> <b> Last page </b> </button> </a>";

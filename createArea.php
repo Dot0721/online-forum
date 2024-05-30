@@ -4,9 +4,6 @@
 
 <?php
     include "style.html";
-?>
-
-<?php
     include 'db.php';
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $userid = $_POST['userid'];
@@ -26,10 +23,11 @@
 
 <body>
     <a href='viewAreaList.php?userid=<?=$userid?>'> <button class='bubbles'> <b> Bubbles </b> </button> </a>
-    <a href="index.php"> <button class="upper-right-button"> <b> Log out </b> </button> </a>
+    <a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>
     <?php
         echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
     ?>
+    <a href='viewAreaList.php?userid=<?=$userid?>'> <button class='last-page'> <b> Last Page </b> </button> </a>
     <form name="form1" action="createArea.php" method="post">
         <div>
             <h1> Create Area </h1>

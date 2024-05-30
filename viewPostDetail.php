@@ -61,18 +61,18 @@
 <body>
 	<div class="flex-center position-ref full-height">
 	<?php
-		echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='last-page'> <b> Last page </b> </button> </a>";
+		echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='last-page'> <b> Last Page </b> </button> </a>";
 		if (!$userid) {
-			echo '<a href="index.php"> <button class="login"> <b> Log in </b> </button> </a>';
+			echo '<a href="index.php"> <button class="login"> <b> Login </b> </button> </a>';
 		}
 		else {
-			echo '<a href="index.php"> <button class="log-out"> <b> Log out </b> </button> </a>';
+			echo '<a href="index.php"> <button class="log-out"> <b> Log Out </b> </button> </a>';
 		}
 	?>
 	 <div class="top-left home">
 		<?php
 			if($userid){
-				echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=".$postid."'>User</a>";
+				echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=".$postid."'> User </a>";
 			}
 		?>
 	 </div>
