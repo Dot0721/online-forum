@@ -20,37 +20,13 @@
 ?>
 
 <style>
-	.login {
-		width: 100px;
-        height: 50px;
-        font-size: 16;
-        color: white;
-        background: black;
-        border-radius: 5px;
-        position: fixed;
-        top: 40px;
-        right: 40px;
-        cursor: pointer;
-    }
-	.log-out {
-		width: 100px;
-        height: 50px;
-        font-size: 16;
-        color: white;
-        background: black;
-        border-radius: 5px;
-        position: fixed;
-        top: 40px;
-        right: 40px;
-        cursor: pointer;
-    }
 	.last-page {
 		width: 100px;
         height: 50px;
         font-size: 16;
-        color: white;
-        background: black;
-        border-radius: 5px;
+        color: black;
+        background: none;
+        border: none;
         position: fixed;
         top: 40px;
         right: 160px;
@@ -63,10 +39,10 @@
 	<?php
 		echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='last-page'> <b> Last Page </b> </button> </a>";
 		if (!$userid) {
-			echo '<a href="index.php"> <button class="login"> <b> Login </b> </button> </a>';
+			echo '<a href="index.php"> <button class="upper-right-button"> <b> Login </b> </button> </a>';
 		}
 		else {
-			echo '<a href="index.php"> <button class="log-out"> <b> Log Out </b> </button> </a>';
+			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
 		}
 	?>
 	 <div class="top-left home">

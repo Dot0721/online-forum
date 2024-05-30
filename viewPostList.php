@@ -12,6 +12,17 @@
 	hr {
 		width: 80%;
 	}
+	.visitor-last-page {
+		width: 100px;
+        height: 50px;
+		font-size: 16px;
+		background: none;
+		border: none;
+        position: fixed;
+        top: 40px;
+        right: 160px;
+		cursor: pointer;
+	}
 	.write-post {
         width: 8em;
         height: 50px;
@@ -38,7 +49,6 @@
 		text-decoration: none;
 		color: black;
 	}
-
 </style>
 
 <body>
@@ -46,13 +56,14 @@
 		if (!$userid) {
 			echo "<a href='viewAreaList.php?userid=0'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Login </b> </button> </a>';
+			echo "<a href='viewAreaList.php?userid=0'> <button class='visitor-last-page'> <b> Last Page </b> </button> </a>";
 		}
 		else {
 			echo "<a href='viewAreaList.php?userid=". $userid . "'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
+			echo "<a href='viewAreaList.php?userid=". $userid . "'> <button class='last-page'> <b> Last Page </b> </button> </a>";
 		}
 	?>
-	<a href='viewAreaList.php?userid=<?=$userid?>'> <button class='last-page'> <b> Last Page </b> </button> </a>
 	<?php
 		if($userid) {
 			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=" . $areaid . "&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
