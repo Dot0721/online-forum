@@ -3,10 +3,7 @@
 <title> Write Post </title>
 
 <?php
-    include "NewStyle.html";
-?>
-
-<?php
+    include "style.html";
     include 'db.php';
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $userid = $_POST['userid'];
@@ -28,55 +25,16 @@
     div {
         text-align: center;
     }
-    h2 {
-        font-size: 28;
-        font-family: 'Nunito', sans-serif;
-        position: relative;
-        top: 100px;
-    }
-    textarea {
-        width: 500px;
-        height: 100px;
-        padding: 12px 16px;
-        border: solid;
-        border-radius: 5px;
-        font-size: 18px;
-        font-family: 'Nunito', sans-serif;
-        position: relative;
-        top: 90px;
-    }
     .last-page {
 		width: 100px;
         height: 50px;
         font-size: 16;
-        color: white;
-        background: black;
-        border-radius: 5px;
+        color: black;
+        background: none;
+        border: none;
         position: fixed;
         top: 40px;
-        right: 160px;
-        cursor: pointer;
-    }
-    .input-field {
-        width: 300px;
-        height: 50px;
-        padding: 12px 16px;
-        border: solid;
-        border-radius: 5px;
-        font-size: 18px;
-        font-family: 'Nunito', sans-serif;
-        position: relative;
-        top: 90px;
-    }
-    .send {
-        width: 100px;
-        height: 50px;
-        color: white;
-        font-size: 16;
-        background: black;
-        border-radius: 5px;
-        position: relative;
-        top: 120px;
+        right: 280px;
         cursor: pointer;
     }
 </style>
@@ -85,6 +43,7 @@
     <a href='viewAreaList.php?userid=<?=$userid?>'> <button class="bubbles"> <b> Bubbles </b> </button> </a>
     <a href="index.php"> <button class="upper-right-button"> <b> Log out </b> </button> </a>
     <?php
+        echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
         echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='last-page'> <b> Last page </b> </button> </a>";
     ?>
     <form name="form1" action="board.php" method="post">
@@ -92,12 +51,13 @@
             <input type="hidden" name="userid" value="<?=$userid?>"> 
             <input type="hidden" name="areaid" value="<?=$areaid?>"> 
             <h1> <?="Hi, " . $name . "!"?> </h1>
+            <p class="dir"> It's time to write your post! </p>
             <h2> Postname </h2>
             <input type="text" name="postname" placeholder="Enter Your Postname" class="input-field">
             <h2> Article </h2>
             <textarea name="article" placeholder="Enter Your content"></textarea>
             <br>
-            <button type="submit" name="submit" value="SEND" class="send"> <b> Send </b> </button>
+            <button type="submit" name="submit" value="SEND" class="submit"> <b> Send </b> </button>
         </div>
     </form>
 </body>

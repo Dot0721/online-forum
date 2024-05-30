@@ -3,67 +3,15 @@
 <title> Favorite Areas </title>
 
 <?php
+	include "style.html";
 	include "db.php";
 	$userid = $_GET['userid'];
 ?>
 
 <style>
-	h1 {
-		text-align: center;
-		font-size: 50;
-		font-family: 'Nunito', sans-serif;
-		position: relative;
-		top: 100px;
-	}
 	h3 {
 		position: relative;
 		left: 0;
-	}
-	.bubbles {
-        width: 100px;
-        height: 50px;
-        font-size: 20;
-        color: black;
-        background: none;
-        border: none;
-        position: fixed;
-        top: 40px;
-        left: 40px;
-        cursor: pointer;
-    }
-    .log-out {
-        width: 100px;
-        height: 50px;
-        font-size: 16;
-        color: white;
-        background: black;
-        border-radius: 5px;
-        position: fixed;
-        top: 40px;
-        right: 40px;
-        cursor: pointer;
-    }
-	.account {
-		width: 100px;
-        height: 50px;
-		font-size: 16px;
-		background: none;
-		border-radius: 5px;
-        position: fixed;
-        top: 40px;
-        right: 160px;
-		cursor: pointer;
-	}
-	.create-area {
-		width: 110px;
-        height: 50px;
-		font-size: 16px;
-		background: none;
-		border: none;
-        position: fixed;
-        top: 40px;
-        right: 280px;
-		cursor: pointer;
 	}
 	.main {
 		width: 500px;
@@ -141,14 +89,6 @@
 		display: flex;
 		justify-content: center;
 	}
-	.dir {
-		text-align: center;
-		font-size: 18;
-		font-family: 'Nunito', sans-serif;
-		color: grey;
-		position: relative;
-		top: 90px;
-	}
 </style>
 
 <body>
@@ -163,7 +103,7 @@
 			$result = mysqli_query($db,$sql);
 			$row = mysqli_fetch_assoc($result);
 			echo "<a href='viewAreaList.php?userid=". $userid . "'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
-			echo '<a href="index.php"> <button class="log-out"> <b> Log out </b> </button> </a>';
+			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log out </b> </button> </a>';
 			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
 			if($row['permission_level']==3){
 				echo "<a href='createArea.php?userid=" . $userid . "'> <button class='create-area'> <b> Create Area </b> </button> </a>";
@@ -198,7 +138,7 @@
 			?>
 		</div>
 	</div>
-	<br>
+	<footer></footer>
 </body>
 
 </html>

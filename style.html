@@ -5,18 +5,10 @@
 
 <!-- Styles -->
 <style>
-    /*
-    html, body {
-        color: #636b6f;
-        font-family: 'Nunito', sans-serif;
-        font-weight: 200;
-        height: 110vh;
-        margin: 5;
-    }
-    */
     h1 {
         font-size: 50;
         font-family: 'Nunito', sans-serif;
+        text-align: center;
         position: relative;
         top: 110px;
     }
@@ -29,10 +21,21 @@
     input {
         text-align: center;
     }
+    textarea {
+        width: 500px;
+        height: 100px;
+        padding: 12px 16px;
+        border: solid;
+        border-radius: 5px;
+        font-size: 18px;
+        font-family: 'Nunito', sans-serif;
+        position: relative;
+        top: 60px;
+    }
     footer {
         height: 15%;
     }
-    .bubbles {
+    .bubbles { /*Go to All Areas*/
         width: 100px;
         height: 50px;
         font-size: 20;
@@ -56,7 +59,7 @@
         right: 40px;
         cursor: pointer;
     }
-    .account {
+    .account { /*Go to User Information*/
 		width: 100px;
         height: 50px;
 		font-size: 16px;
@@ -67,9 +70,21 @@
         right: 160px;
 		cursor: pointer;
 	}
-    .dir {
+    .create-area {
+		width: 110px;
+        height: 50px;
+		font-size: 16px;
+		background: none;
+		border: none;
+        position: fixed;
+        top: 40px;
+        right: 280px;
+		cursor: pointer;
+	}
+    .dir { /*Direction of input field*/
         color: grey;
         font-size: 18;
+        text-align: center;
         position: relative;
         top: 80px;
     }
@@ -97,6 +112,13 @@
     }
 
     /*
+    html, body {
+        color: #636b6f;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 200;
+        height: 110vh;
+        margin: 5;
+    }
     .full-width {
         height: 80vw;
     }
