@@ -20,7 +20,7 @@
 ?>
 
 <style>
-	.last-page {
+	.visitor_last-page {
 		width: 100px;
         height: 50px;
         font-size: 16;
@@ -37,22 +37,22 @@
 <body>
 	<div class="flex-center position-ref full-height">
 	<?php
-		echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='last-page'> <b> Last Page </b> </button> </a>";
 		if (!$userid) {
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Login </b> </button> </a>';
 		}
 		else {
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
+			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
+			echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='last-page'> <b> Last Page </b> </button> </a>";
 		}
 	?>
-	 <div class="top-left home">
-		<?php
-			if($userid){
-				echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=".$postid."'> User </a>";
-			}
-		?>
-	 </div>
-</div>
+	<?php
+		/*
+		if($userid){
+			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=".$postid."'> User </a>";
+		}
+		*/
+	?> 
 <div class="note full-height">
 	<?php
 		$mysql="select manageid from post_area where areaid=$areaid";

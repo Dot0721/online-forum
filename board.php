@@ -32,7 +32,7 @@
     <a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>
     <?php
         echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
-        echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='last-page'> <b> Last page </b> </button> </a>";
+        echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='last-page'> <b> Last Page </b> </button> </a>";
     ?>
     <form name="form1" action="board.php" method="post">
         <div>

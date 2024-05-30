@@ -26,6 +26,17 @@
     div {
         text-align: center;
     }
+    .last-page {
+		width: 100px;
+        height: 50px;
+		font-size: 16px;
+		background: none;
+		border: none;
+        position: fixed;
+        top: 40px;
+        right: 160px;
+		cursor: pointer;
+	}
     .save {
         width: 100px;
         height: 50px;
@@ -53,6 +64,9 @@
 <body>
     <a href='viewAreaList.php?userid=<?=$userid?>'> <button class='bubbles'> <b> Bubbles </b> </button> </a>
     <a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>
+    <?php
+        echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='last-page'> <b> Last Page </b> </button> </a>";
+    ?>
     <?php
         include 'db.php';
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
