@@ -1,4 +1,6 @@
 <html>
+    
+<title> Edit Post </title>
 
 <?php
     include 'style.html';
@@ -16,16 +18,10 @@
     }
 ?>
 
-<title> Edit Message </title>
-
 <body>
-     <div class="flex-center position-ref full-height">
-                <div class="top-right home">
-                        <a href='viewPostDetail.php?postid=<?=$postid?>&userid=<?=$userid?>&areaid=<?=$areaid?>'>Last Page</a>
-                        <a href="index.php">Logout</a>
-                        <a href="signup.php">Register</a>
-                </div>
-
+    <a href='viewPostDetail.php?postid=<?=$postid?>&userid=<?=$userid?>&areaid=<?=$areaid?>'> <button class='last-page'> <b> Last Page </b> </button> </a>
+    <a href='viewAreaList.php?userid=". $userid . "'> <button class='bubbles'> <b> Bubbles </b> </button> </a>
+	<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>
     <?php
         include 'db.php';
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
