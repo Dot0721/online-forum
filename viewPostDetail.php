@@ -108,7 +108,7 @@
 			echo "<div class='flex-center full-width'>";
 			echo 	"<h1>$postname</h1>";
 			echo 	"<p class='dir'>Poster: $username</p>";
-			echo 	"<div class='article'>";
+			echo 	"<div class='article full-width'>";
 			echo 		"<br>" . nl2br($article) . "<br>"; 
 			echo 	"</div>";
 			echo "</div>";
