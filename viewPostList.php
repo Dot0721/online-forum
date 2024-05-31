@@ -12,17 +12,6 @@
 	hr {
 		width: 80%;
 	}
-	.visitor-last-page {
-		width: 100px;
-        height: 50px;
-		font-size: 16px;
-		background: none;
-		border: none;
-        position: fixed;
-        top: 40px;
-        right: 160px;
-		cursor: pointer;
-	}
 	.write-post {
         width: 8em;
         height: 50px;
@@ -43,9 +32,9 @@
 		align-items: center;
 	}
 	.post {
+		width: 80%;
 		padding: 1em 0;
 		text-align: center;
-		width: 80%;
 		text-decoration: none;
 		color: black;
 	}
@@ -89,7 +78,7 @@
 			$postname=$row['postname'];
 			$postid=$row['postid'];
 			//echo "<br>Subject：" . $row['subject'];
-			echo "<a href='viewPostDetail.php?postid=$postid&userid=$userid&areaid=$areaid' class='post'>$postname</a>";
+			echo "<a href='viewPostDetail.php?postid=$postid&userid=$userid&areaid=$areaid' class='post'> <b> $postname </b> </a>";
 			echo "<hr>";
 		}
 		echo "</div> </div>";

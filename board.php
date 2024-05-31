@@ -56,7 +56,7 @@
     //送出留言後會執行下面這段程式碼
     if (isset($_POST['submit'])) {
         include "db.php";
-        echo '<div class="success">Added successfully ！</div>';
+        echo '<div class="success"> Your Post Added Successfully！ </div>';
         $userid = $_POST['userid'];
         $areaid=$_POST['areaid'];
         $postname = $_POST['postname'];
