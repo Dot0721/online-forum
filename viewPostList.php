@@ -50,13 +50,11 @@
 		else {
 			echo "<a href='viewAreaList.php?userid=". $userid . "'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
+			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=" . $areaid . "&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
 			echo "<a href='viewAreaList.php?userid=". $userid . "'> <button class='last-page'> <b> Last Page </b> </button> </a>";
 		}
 	?>
 	<?php
-		if($userid) {
-			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=" . $areaid . "&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
-		}
 		include "db.php";
 		$sql = "select * from post_area where areaid=$areaid";
 		$result = mysqli_query($db, $sql);
