@@ -36,11 +36,11 @@
 <body>
 	<?php
 		if (!$userid) {
-			echo '<a href="index.php"> Log in </a>';
+			echo '<a href="index.php"> Login </a>';
 		}
 		else {
 			echo "<a href='viewAreaList.php?userid=".$userid."'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
-			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log out </b> </button> </a>';
+			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
 		}
 	?>
 	<div>

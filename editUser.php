@@ -26,23 +26,17 @@
     div {
         text-align: center;
     }
-    .dir {
-        color: grey;
-        font-size: 18;
-        position: relative;
-        top: 90px;
-    }
-    .input-field {
-        width: 300px;
+    .last-page {
+		width: 100px;
         height: 50px;
-        padding: 12px 16px;
-        border: solid;
-        border-radius: 5px;
-        font-size: 18px;
-        font-family: 'Nunito', sans-serif;
-        position: relative;
-        top: 80px;
-    }
+		font-size: 16px;
+		background: none;
+		border: none;
+        position: fixed;
+        top: 40px;
+        right: 160px;
+		cursor: pointer;
+	}
     .save {
         width: 100px;
         height: 50px;
@@ -51,7 +45,7 @@
         background: black;
         border-radius: 5px;
         position: relative;
-        top: 110px;
+        top: 100px;
         cursor: pointer;
     }
     .rewrite {
@@ -62,14 +56,17 @@
         background: black;
         border-radius: 5px;
         position: relative;
-        top: 110px;
+        top: 100px;
         cursor: pointer;
     }
 </style>
 
 <body>
     <a href='viewAreaList.php?userid=<?=$userid?>'> <button class='bubbles'> <b> Bubbles </b> </button> </a>
-    <a href="index.php"> <button class="upper-right-button"> <b> Log out </b> </button> </a>
+    <a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>
+    <?php
+        echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='last-page'> <b> Last Page </b> </button> </a>";
+    ?>
     <?php
         include 'db.php';
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -99,7 +96,7 @@
             <button type="reset" name="Reset" value="REWRITE" class="rewrite"> <b> Rewrite </b> </button>
         </div>
     </form>
-    <br>
+    <footer></footer>
 </body>
 
 </html>

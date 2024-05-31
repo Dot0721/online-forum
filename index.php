@@ -42,34 +42,6 @@
     div {
         text-align: center;
     }
-    .dir {
-        color: grey;
-        font-size: 18;
-        position: relative;
-        top: 90px;
-    }
-    .input-field {
-        width: 300px;
-        height: 50px;
-        padding: 12px 16px;
-        border: solid;
-        border-radius: 5px;
-        font-size: 18px;
-        font-family: 'Nunito', sans-serif;
-        position: relative;
-        top: 80px;
-    }
-    .login {
-        width: 100px;
-        height: 50px;
-        color: white;
-        font-size: 16;
-        background: black;
-        border-radius: 5px;
-        position: relative;
-        top: 110px;
-        cursor: pointer;
-    }
     .view {
         width: 170px;
         height: 50px;
@@ -77,7 +49,7 @@
         border: none;
         background: none;
         position: relative;
-        top: 120px;
+        top: 100px;
         cursor: pointer;
     }
 </style>
@@ -93,7 +65,7 @@
             <h2> Password </h2>
             <input type=password name="password" placeholder="Enter Your Password" class="input-field">
             <br>
-            <button type="submit" name="submit" class="login"> <b> Login </b> </button>
+            <button type="submit" name="submit" class="submit"> <b> Login </b> </button>
             <br>
         </div>
     </form>
