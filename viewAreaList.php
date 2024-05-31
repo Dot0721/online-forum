@@ -67,10 +67,6 @@
 		left: 90%;
 		top: -2.5em;
 	}
-	.fit {
-		width: 100%;
-		height: 100%;
-	}
 	.centerbox {
 		display: flex;
 		justify-content: center;
