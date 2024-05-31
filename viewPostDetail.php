@@ -103,7 +103,11 @@
 			$mysql="select * from register_user where userid = $uid";
 			$find = mysqli_query($db, $mysql);
 			$findname = mysqli_fetch_assoc($find);
-			$username=$findname['name'];
+			$username=($uid) ? $findname['name'] : '';
+			$mysql="select * from register_user where userid = ".($userid ? $userid : '""');
+			$find = mysqli_query($db, $mysql);
+			$findname = mysqli_fetch_assoc($find);
+			$permissionlvl = ($userid) ? $findname['permission_level'] : 0;
 			// show post message
 			echo "<div class='flex-center full-width'>";
 			echo 	"<h1>$postname</h1>";
@@ -120,11 +124,10 @@
 						href='delete.php?userid=$userid&postid=$postid&areaid=$areaid'> <img src='icon/delete.svg' alt='delete' class='fit'> </a>";
 			}
 			// show close post if have permission
-			if (($userid == $manageid&& $findname['permission_level']>=2)||$findname['permission_level']==3) {
-				echo ' <a href=" closepost.php?userid=' . $userid . '&postid=' . $postid. '&areaid='.$areaid.'">
-				close post</a>';
-				echo'<br>';
-		}
+			if (($userid == $manageid)|| $permissionlvl==3) {
+				echo "<a class='pos-abs icon-btn' style='right:calc(20% - 60px); top:0' 
+						href='closepost.php?userid=$userid&postid=$postid&areaid=$areaid'> <img src='icon/circle-cross.svg' alt='close' class='fit'> </a>";
+			}
 			
 		?>
 		</div>
