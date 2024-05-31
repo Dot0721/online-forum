@@ -16,17 +16,6 @@
 	a {
 		text-decoration: none;
 	}
-	.fav {
-		width: 100px;
-        height: 50px;
-        background: none;
-		border: none;
-		font-size: 16;
-        position: fixed;
-        top: 40px;
-        right: 400px;
-        cursor: pointer;
-	}
 	.cards {
 		display: flex;
         top: 100px;
