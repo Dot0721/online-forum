@@ -118,7 +118,7 @@
 						$is_favCount = mysqli_query($db, $sql);
 						$is_fav = mysqli_fetch_assoc($is_favCount)['fav'] != 0;
 						// Choose image(star) to display
-						$star_style = "icon/star-" . ($is_fav ? "yellow" : "hollow") . ".svg" ;
+						$star_style = "icon/star-" . ($is_fav ? "black" : "hollow") . ".svg" ;
 						echo 	"<a href='collectArea.php?areaid=$areaid&userid=$userid' class='star'> <img src=$star_style alt='Favorite' class='fit'	> </a>";
 					}
 					// Button to enter area
