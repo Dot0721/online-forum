@@ -2,6 +2,7 @@
 ### board.php -> 新增貼文
 ### collectAreaList.php -> 查看已訂閱版區
 ### createArea.php -> 新增版區
+### edit.php -> 編輯貼文
 ### editUser.php -> 修改用戶資料
 ### index.php -> 登入帳號
 ### signup.php -> 註冊帳號
