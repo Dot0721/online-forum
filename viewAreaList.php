@@ -16,17 +16,6 @@
 	a {
 		text-decoration: none;
 	}
-	.fav {
-		width: 100px;
-        height: 50px;
-        background: none;
-		border: none;
-		font-size: 16;
-        position: fixed;
-        top: 40px;
-        right: 400px;
-        cursor: pointer;
-	}
 	.cards {
 		display: flex;
         top: 100px;
@@ -77,7 +66,7 @@
 	<?php
 		// Toolbar for non-member
 		if (!$userid) {
-			//echo "<a href='viewAreaList.php?userid=".$userid."'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
+			echo "<a href='viewAreaList.php?userid=0'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Login </b> </button> </a>';
 		}
 		// Toolbar for member
@@ -87,9 +76,9 @@
 			$result = mysqli_query($db,$sql);
 			$row = mysqli_fetch_assoc($result);
 			echo "<a href='viewAreaList.php?userid=".$userid."'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
-			echo "<a href='collectAreaList.php?userid=" . $userid . "'> <button class='fav'> <b> Favorite </b> </button> </a>";
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
 			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
+			echo "<a href='collectAreaList.php?userid=" . $userid . "'> <button class='fav'> <b> Favorite </b> </button> </a>";
 			// Give access to create area if admin
 			if($row['permission_level']==3){
 				echo "<a href='createArea.php?userid=" . $userid . "'> <button class='create-area'> <b> Create Area </b> </button> </a>";
