@@ -61,7 +61,7 @@
         $areaid=$_POST['areaid'];
         $postname = $_POST['postname'];
         $article = $_POST['article'];
-        $sql = "INSERT post(uid,aid, postname,article) VALUES ('$userid', '$areaid','$postname', '$article')";
+        $sql = "INSERT post(uid,aid,postname,article) VALUES ('$userid', '$areaid', '$postname', '$article')";
         if (!mysqli_query($db, $sql)) {
             die(mysqli_error($db));
         }
