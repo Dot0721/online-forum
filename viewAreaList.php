@@ -119,7 +119,7 @@
 					$areaid=$row['areaid'];
 					// Container for each area
 					echo "<div class='box'>";
-					echo 	"<h3> $areaname </h3>";
+					echo 	"<h3 style='height:13%; width:85%'> $areaname </h3>";
 					// Check if area is favorated by user
 					if ($userid) {
 						$sql = "select COUNT(*) as fav from collect_area where uid=$userid AND aid=$areaid";
