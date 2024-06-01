@@ -40,12 +40,6 @@
 		right: 0px;
 		cursor: pointer;
 	}
-	.star {
-		width: 20px;
-		height: 20px;
-		position: absolute;
-		left: 0px;
-	}
 	a {
 		text-decoration: none;
 	}
@@ -88,14 +82,6 @@
 		text-align: center;
 		position: relative;
 		bottom: -3em;
-	}
-	.star {
-		display: block;
-		width: 20px;
-		height: 20px;
-		position: relative;
-		left: 90%;
-		top: -2.5em;
 	}
 	.fit {
 		width: 100%;
@@ -148,7 +134,7 @@
 					echo "<div class='box'>";
 					echo 	"<h3> $areaname </h3>";
 					$star_style = "icon/star-black.svg" ;
-					echo 	"<a href='collectArea.php?areaid=$areaid&userid=$userid' class='star'> <img src=$star_style alt='Favorite' class='fit'	> </a>";
+					echo 	"<a href='collectArea.php?areaid=$areaid&userid=$userid' class='star icon-btn'> <img src=$star_style alt='Favorite' class='fit'	> </a>";
 					// Button to enter area
 					echo 	"<div class='centerbox'>
 								<a href='viewPostList.php?areaid=$areaid&userid=$userid' class='enter'> enter </a>

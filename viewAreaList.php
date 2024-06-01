@@ -64,14 +64,6 @@
 		position: relative;
 		bottom: -3em;
 	}
-	.star {
-		display: block;
-		width: 20px;
-		height: 20px;
-		position: relative;
-		left: 90%;
-		top: -2.5em;
-	}
 	.centerbox {
 		display: flex;
 		justify-content: center;
@@ -127,7 +119,7 @@
 						$is_fav = mysqli_fetch_assoc($is_favCount)['fav'] != 0;
 						// Choose image(star) to display
 						$star_style = "icon/star-" . ($is_fav ? "black" : "hollow") . ".svg" ;
-						echo 	"<a href='collectArea.php?areaid=$areaid&userid=$userid' class='star'> <img src=$star_style alt='Favorite' class='fit'	> </a>";
+						echo 	"<a href='collectArea.php?areaid=$areaid&userid=$userid' class='star icon-btn'> <img src=$star_style alt='Favorite' class='fit'	> </a>";
 					}
 					// Button to enter area
 					echo 	"<div class='centerbox'>
