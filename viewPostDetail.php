@@ -66,15 +66,16 @@
 <body>
 	<!-- toolbar -->
 	<?php
-		echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='last-page'> <b> Posts </b> </button> </a>";
 		if (!$userid) {
 			echo "<a href='viewAreaList.php?userid=0'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Login </b> </button> </a>';
+			echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='visitor-last-page'> <b> All Posts </b> </button> </a>";
 		}
 		else {
 			echo "<a href='viewAreaList.php?userid=".$userid."'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log out </b> </button> </a>';
-			echo "<a class=account href='userinfo.php?userid=" . $userid . "&areaid=0&postid=".$postid."'> <button class='account'> <b> User </b> </button> </a>";
+			echo "<a class=account href='userinfo.php?userid=" . $userid . "&areaid=0&postid=".$postid."'> <button class='account'> <b> Account </b> </button> </a>";
+			echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='last-page'> <b> All Posts </b> </button> </a>";
 		}
 	?>
 	<!-- other content, offset by 110px-->

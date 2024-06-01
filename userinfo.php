@@ -41,7 +41,7 @@
 		else {
 			echo "<a href='viewAreaList.php?userid=".$userid."'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
-			echo "<a href='viewAreaList.php?userid=". $userid . "'> <button class='visitor-last-page'> <b> Last Page </b> </button> </a>";
+			echo "<a href='viewAreaList.php?userid=". $userid . "'> <button class='visitor-last-page'> <b> All Areas </b> </button> </a>";
 		}
 	?>
 	<div>

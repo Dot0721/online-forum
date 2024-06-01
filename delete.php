@@ -1,7 +1,5 @@
-
 <?php
 include "db.php";
-
 session_start();
 $postid=$_GET['postid'];
 $userid=$_GET['userid'];

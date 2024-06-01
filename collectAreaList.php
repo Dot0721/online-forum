@@ -92,7 +92,7 @@
 			}*/
 		}
 	?>
-	<a href='viewAreaList.php?userid=<?=$userid?>'> <button class='last-page'> <b> All Post </b> </button> </a>
+	<a href='viewAreaList.php?userid=<?=$userid?>'> <button class='last-page'> <b> All Areas </b> </button> </a>
 	<h1> Favorite Areas </h1>
 	<p class="dir"> Choose an area to start chatting! </p>
 	<div class="centerbox">

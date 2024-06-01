@@ -28,7 +28,7 @@
     <a href='viewAreaList.php?userid=<?=$userid?>'> <button class='bubbles'> <b> Bubbles </b> </button> </a>
     <a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>
     <a href='userinfo.php?userid=<?=$userid?>&areaid=0&postid=0'> <button class='account'> <b> Account </b> </button> </a>
-    <a href='viewPostDetail.php?postid=<?=$postid?>&userid=<?=$userid?>&areaid=<?=$areaid?>'> <button class='last-page'> <b> Last Page </b> </button> </a>
+    <a href='viewPostDetail.php?postid=<?=$postid?>&userid=<?=$userid?>&areaid=<?=$areaid?>'> <button class='last-page'> <b> Post Content </b> </button> </a>
     <div>
         <form name="form1" action="closepost.php" method="post">
             <input type="hidden" name="postid" value="<?=$postid?>">
