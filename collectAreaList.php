@@ -110,7 +110,7 @@
 			}*/
 		}
 	?>
-	<a href='viewAreaList.php?userid=<?=$userid?>'> <button class='last-page'> <b> Last Page </b> </button> </a>
+	<a href='viewAreaList.php?userid=<?=$userid?>'> <button class='last-page'> <b> All Post </b> </button> </a>
 	<h1> Favorite Areas </h1>
 	<p class="dir"> Choose an area to start chatting! </p>
 	<div class="centerbox">
@@ -128,7 +128,7 @@
 					// Container for each area
 					echo "<div class='box'>";
 					echo 	"<h3> $areaname </h3>";
-					$star_style = "icon/star-yellow.svg" ;
+					$star_style = "icon/star-black.svg" ;
 					echo 	"<a href='collectArea.php?areaid=$areaid&userid=$userid' class='star'> <img src=$star_style alt='Favorite' class='fit'	> </a>";
 					// Button to enter area
 					echo 	"<div class='centerbox'>

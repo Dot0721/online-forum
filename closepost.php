@@ -60,10 +60,14 @@
         $userid=$_POST['userid'];
         $areaid=$_POST['areaid'];
         $sql ="delete from message where pid=$postid";
-        mysqli_query($db, $sql);
+        if (!mysqli_query($db, $sql)) {
+            die(mysqli_error($con));
+        }
         $sql ="delete from likeuserid where pid=$postid";
-        mysqli_query($db, $sql);
-        $sql = "update post set postname='$violate',article='' where postid='$postid'";
+        if (!mysqli_query($db, $sql)) {
+            die(mysqli_error($con));
+        }
+        $sql = "delete from post where postid='$postid'";
         if (!mysqli_query($db, $sql)) {
             die(mysqli_error($con));
         }
