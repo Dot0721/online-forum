@@ -44,6 +44,8 @@
 	}
 	h1 {
 		top: revert;
+		width: inherit;
+		word-wrap: break-word;
 		margin: 5px;
 	}
 	h2 {
@@ -118,14 +120,14 @@
 			echo "</div>";
 			// show edit & delete if post by self
 			if ($userid == $uid&&$showInput==1) { 
-				echo "<a class='pos-abs icon-btn' style='right:20%; top:0' 
+				echo "<a class='pos-abs icon-btn' style='right:20%; top:-5%' 
 						href='edit.php?userid=$userid&postid=$postid&areaid=$areaid'> <img src='icon/edit.svg' alt='edit' class='fit'> </a>";
-				echo "<a class='pos-abs icon-btn' style='right:calc(20% + 60px); top:0'
+				echo "<a class='pos-abs icon-btn' style='right:calc(20% + 60px); top:-5%'
 						href='delete.php?userid=$userid&postid=$postid&areaid=$areaid'> <img src='icon/delete.svg' alt='delete' class='fit'> </a>";
 			}
 			// show close post if have permission
 			if (($userid == $manageid)|| $permissionlvl==3) {
-				echo "<a class='pos-abs icon-btn' style='right:calc(20% - 60px); top:0' 
+				echo "<a class='pos-abs icon-btn' style='right:calc(20% - 60px); top:-5%' 
 						href='closepost.php?userid=$userid&postid=$postid&areaid=$areaid'> <img src='icon/circle-cross.svg' alt='close' class='fit'> </a>";
 			}
 			
