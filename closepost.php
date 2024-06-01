@@ -67,7 +67,7 @@
         if (!mysqli_query($db, $sql)) {
             die(mysqli_error($con));
         }
-        $sql = "update post set postname='$violate',article='' where postid='$postid'";
+        $sql = "update post set postname='$violate',article='',isclose=TRUE where postid='$postid'";
         if (!mysqli_query($db, $sql)) {
             die(mysqli_error($con));
         }
