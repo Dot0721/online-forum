@@ -9,9 +9,25 @@
 ?>
 
 <style>
+	h1 {
+		display: inline;
+        font-size: 50;
+        font-family: 'Nunito', sans-serif;
+        text-align: center;
+        position: relative;
+        top: 110px;
+    }
 	hr {
 		width: 80%;
 	}
+	.dir {
+		display: inline-block;
+        color: grey;
+        font-size: 18;
+        text-align: center;
+        position: relative;
+        top: 90px;
+    }
 	.write-post {
         width: 8em;
         height: 50px;
@@ -60,8 +76,11 @@
 		$result = mysqli_query($db, $sql);
 		$areaName = mysqli_fetch_assoc($result)['areaname'];
 		echo "<div>";
+		echo "<div style='text-align: center;'>";
 		echo "<h1> Welcome to #$areaName </h1>";
+		echo "<br>";
 		echo "<p class='dir'> Choose a post to view content! </p>";
+		echo "</div>";
 		$sql = "select * from post where aid=$areaid";
 		$result = mysqli_query($db, $sql);
 		$_SESSION['userid'] = $userid = $_GET['userid'];

@@ -9,6 +9,14 @@
 ?>
 
 <style>
+	h1 {
+		display: inline;
+        font-size: 50;
+        font-family: 'Nunito', sans-serif;
+        text-align: center;
+        position: relative;
+        top: 110px;
+    }
 	h3 {
 		position: relative;
 		left: 0;
@@ -41,6 +49,14 @@
 	a {
 		text-decoration: none;
 	}
+	.dir {
+		display: inline-block;
+        color: grey;
+        font-size: 18;
+        text-align: center;
+        position: relative;
+        top: 90px;
+    }
 	.cards {
 		display: flex;
         top: 100px;
@@ -111,8 +127,11 @@
 		}
 	?>
 	<a href='viewAreaList.php?userid=<?=$userid?>'> <button class='last-page'> <b> All Post </b> </button> </a>
-	<h1> Favorite Areas </h1>
-	<p class="dir"> Choose an area to start chatting! </p>
+	<div style="text-align: center;">
+		<h1> Favorite Areas </h1>
+		<br>
+		<p class="dir"> Choose an area to start chatting! </p>
+	</div>
 	<div class="centerbox">
 		<div class="cards">
 			<?php
