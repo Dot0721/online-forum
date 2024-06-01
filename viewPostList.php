@@ -95,7 +95,16 @@
 			$postname=$row['postname'];
 			$postid=$row['postid'];
 			//echo "<br>Subject：" . $row['subject'];
-			echo "<a href='viewPostDetail.php?postid=$postid&userid=$userid&areaid=$areaid' class='post'> <b> $postname </b> </a>";
+			echo "<div style='display:flex; align-items:center; width:60vw'>";
+				if ($userid == $row['uid']) {
+				echo "<a class=icon-btn style='display:inline-block;' 
+						href='edit.php?userid=$userid&postid=$postid&areaid=$areaid'> <img src='icon/edit.svg' alt='edit' class='fit'> </a>";
+				} else {
+				echo "<p class=icon-btn style='display:inline-block;'> </p>";
+				}
+				echo "<a href='viewPostDetail.php?postid=$postid&userid=$userid&areaid=$areaid' class='post'
+						style='margin-left:5%'> <b> $postname </b> </a>";
+			echo "</div>";
 			echo "<hr>";
 		}
 		echo "</div> </div>";
