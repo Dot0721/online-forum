@@ -20,18 +20,6 @@
 ?>
 
 <style>
-	.visitor_last-page {
-		width: 100px;
-        height: 50px;
-        font-size: 16;
-        color: black;
-        background: none;
-        border: none;
-        position: fixed;
-        top: 40px;
-        right: 160px;
-        cursor: pointer;
-    }
 	input {
 		padding:5px 15px;
 		background:#F5F5F5;
@@ -70,7 +58,9 @@
 		word-wrap: break-word;
 		font-family: 'Nunito', sans-serif;
 	}
-	
+	.send {
+		
+	}
 </style>	
 
 <body>
@@ -81,13 +71,12 @@
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Login </b> </button> </a>';
 		}
 		else {
-			echo '<a href="index.php"> <button class="log-out"> <b> Log out </b> </button> </a>';
-			echo "<a class=account href='userinfo.php?userid=" . $userid . "&areaid=0&postid=".$postid."'>User</a>";
+			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log out </b> </button> </a>';
+			echo "<a class=account href='userinfo.php?userid=" . $userid . "&areaid=0&postid=".$postid."'> <button class='account'> <b> User </b> </button> </a>";
 		}
 	?>
 	<!-- other content, offset by 110px-->
 	<div class="pos-ref" style="margin-top: 110px;">
-	
 		<div class="flex-center" style="margin-bottom: 10vh">
 		<?php
 			// collect post infomation 
@@ -112,22 +101,22 @@
 			$permissionlvl = ($userid) ? $findname['permission_level'] : 0;
 			// show post message
 			echo "<div class='flex-center full-width'>";
-			echo 	"<h1>$postname</h1>";
-			echo 	"<p class='dir'>Poster: $username</p>";
+			echo "<h1> $postname </h1>";
+			echo 	"<p class='dir'> Poster: $username </p>";
 			echo 	"<div class='article full-width'>";
 			echo 		"<br>" . nl2br($article) . "<br>"; 
 			echo 	"</div>";
 			echo "</div>";
 			// show edit & delete if post by self
 			if ($userid == $uid&&$showInput==1) { 
-				echo "<a class='pos-abs icon-btn' style='right:20%; top:-5%' 
+				echo "<a class='pos-abs icon-btn' style='right:20%; top:-15px'
 						href='edit.php?userid=$userid&postid=$postid&areaid=$areaid'> <img src='icon/edit.svg' alt='edit' class='fit'> </a>";
-				echo "<a class='pos-abs icon-btn' style='right:calc(20% + 60px); top:-5%'
+				echo "<a class='pos-abs icon-btn' style='right:calc(20% + 60px); top:-15px'
 						href='delete.php?userid=$userid&postid=$postid&areaid=$areaid'> <img src='icon/delete.svg' alt='delete' class='fit'> </a>";
 			}
 			// show close post if have permission
 			if (($userid == $manageid)|| $permissionlvl==3) {
-				echo "<a class='pos-abs icon-btn' style='right:calc(20% - 60px); top:-5%' 
+				echo "<a class='pos-abs icon-btn' style='right:calc(20% - 60px); top:-15px'
 						href='closepost.php?userid=$userid&postid=$postid&areaid=$areaid'> <img src='icon/circle-cross.svg' alt='close' class='fit'> </a>";
 			}
 			
@@ -155,7 +144,7 @@
 				// like count
 				$sql="select * from likeuserid where pid=$postid";
 				$result = mysqli_query($db,$sql);
-				echo "<p class=pos-ref style='left:calc(30% + 75px); top:-40px'>" . mysqli_num_rows($result) . "</p>";
+				echo "<p class=pos-ref style='left:calc(30% + 50px); top:-40px; width: 50px'>" . mysqli_num_rows($result) . "</p>";
 			?>
 		</form>
 		</div>
@@ -169,8 +158,8 @@
 				<input type="hidden" name="areaid" value="<?=$areaid?>">
 				<?php
 				if ($showInput==1) {
-					echo '<p><input type="text" name="text"></p>';
-					echo '<p style="text-align:center"><input type="submit" name="submit" value="SEND"></p>';
+					echo '<p> <input type="text" name="text" style="cursor: text"> </p>';
+					echo '<p style="text-align:center"> <input type="submit" name="submit" value="SEND" style="font-weight: bold"> </p>';
 				}
 				?>
 			</form>
