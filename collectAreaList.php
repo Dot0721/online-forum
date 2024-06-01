@@ -17,10 +17,6 @@
         position: relative;
         top: 110px;
     }
-	h3 {
-		position: relative;
-		left: 0;
-	}
 	.main {
 		width: 500px;
         font-size: 20px;
@@ -132,7 +128,7 @@
 					$areaid=$row['areaid'];
 					// Container for each area
 					echo "<div class='box'>";
-					echo 	"<h3> $areaname </h3>";
+					echo 	"<h3 style='height:13%; width:85%; text-align:center'> $areaname </h3>";
 					$star_style = "icon/star-black.svg" ;
 					echo 	"<a href='collectArea.php?areaid=$areaid&userid=$userid' class='star icon-btn'> <img src=$star_style alt='Favorite' class='fit'	> </a>";
 					// Button to enter area
