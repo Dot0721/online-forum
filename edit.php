@@ -42,7 +42,7 @@
                         <p>TITLE</p>
                         <input type="text" name="postname" value="<?=$rs['postname']?>">
                         <p>ARTICLE</p>
-                        <p><textarea style="font-family: 'Nunito', sans-serif; font-size:20px; width:550px; height:100px;" name="article"></textarea></p>
+                        <p><textarea style="font-family: 'Nunito', sans-serif; font-size:20px; width:550px; height:100px;" name="article"><?= htmlspecialchars($rs['article']) ?></textarea></p>
                         <p><input type="submit" name="submit" value="SAVE">
                     <style>
                         input {padding:5px 15px; background:#ccc; border:0 none;
