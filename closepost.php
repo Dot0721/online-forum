@@ -37,7 +37,7 @@
             <h1> Close Post </h1>
             <p class="dir"> Select the reason why close this post. </p>
             <h2> Violation Reason </h2>
-            <select>
+            <select name="violate">
                 <option> Hate or discriminatory content </option> <!-- 仇恨或歧視內容 -->
                 <option> Violent or pornographic content </option> <!-- 暴力或色情內容 -->
                 <option> Invasion of privacy </option> <!-- 侵犯他人隱私 -->
@@ -67,7 +67,7 @@
         if (!mysqli_query($db, $sql)) {
             die(mysqli_error($con));
         }
-        $sql = "delete from post where postid='$postid'";
+        $sql = "update post set postname='$violate',article='' where postid='$postid'";
         if (!mysqli_query($db, $sql)) {
             die(mysqli_error($con));
         }
