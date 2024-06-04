@@ -38,10 +38,19 @@
             <h2> Manager Name </h2>
             <input type="text" name="manager" placeholder="Enter Manager Name" class="input-field">
             <br>
-            <button type="submit" name="submit" value="SEND" class="submit"> <b> Send </b> </button>
+            <button type="submit" name="submit" value="SEND" class="submit"> <b> Create </b> </button>
         </div>
     </form>
 </body>
+
+<!--
+<script>
+    function confirmCreate() {
+        if(confirm('確認要創建此版區嗎?')) {
+        }
+    }
+</script>
+-->
 
 </html>
 
@@ -73,9 +82,4 @@
                 </script>";
         }
     }
-    /*
-    else {
-        echo '<div class="success">Click <strong>Send</strong> when you\'re done.</div>';
-    }
-    */
 ?>
