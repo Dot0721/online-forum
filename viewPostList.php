@@ -89,7 +89,15 @@
 		echo "<div style='text-align: center;'>";
 		echo "<h1> Welcome to #$areaName </h1>";
 		echo "<br>";
-		echo "<p class='dir'> Choose a post to view content! </p>";
+		$sql="select manageid from post_area where areaid=$areaid";
+		$find = mysqli_query($db, $sql);
+		$findmanage = mysqli_fetch_assoc($find);
+		$manageid=$findmanage['manageid'];
+		$sql="select name from register_user where userid = $manageid";
+		$find = mysqli_query($db, $sql);
+		$findmanage = mysqli_fetch_assoc($find);
+		$managename=$findmanage['name'];
+		echo "<p class='dir'> Manager: $managename </p>";
 		echo "</div>";
 		$sql = "select * from post where aid=$areaid";
 		$result = mysqli_query($db, $sql);
