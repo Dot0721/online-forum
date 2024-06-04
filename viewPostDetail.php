@@ -114,8 +114,10 @@
 			if ($userid == $uid&&$showInput==1) { 
 				echo "<a class='pos-abs icon-btn' style='right:20%; top:-15px'
 						href='edit.php?userid=$userid&postid=$postid&areaid=$areaid'> <img src='icon/edit.svg' alt='edit' class='fit'> </a>";
-				echo "<a class='pos-abs icon-btn' style='right:calc(20% + 60px); top:-15px'
-						href='delete.php?userid=$userid&postid=$postid&areaid=$areaid'> <img src='icon/delete.svg' alt='delete' class='fit'> </a>";
+						echo "<a class='pos-abs icon-btn' style='right:calc(20% + 60px); top:-15px'
+						href='#' onclick='confirmDeletion($userid, $postid, $areaid)'>
+						<img src='icon/delete.svg' alt='delete' class='fit'> </a>";
+						
 			}
 			// show close post if have permission
 			if (($userid == $manageid)|| $permissionlvl==3) {
@@ -124,6 +126,14 @@
 			}
 			
 		?>
+		<script>
+function confirmDeletion(userid, postid, areaid) {
+    if (confirm('確認要刪除此貼文嗎?')) {
+        // 確認後跳轉到 delete.php
+        window.location.href = 'delete.php?userid=' + userid + '&postid=' + postid + '&areaid=' + areaid;
+    }
+}
+</script>
 		</div>
 		<div>
 		<!-- show like button -->
