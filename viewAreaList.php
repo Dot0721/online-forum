@@ -73,6 +73,7 @@
 		// Toolbar for non-member
 		if (!$userid) {
 			echo "<a href='viewAreaList.php?userid=0'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
+			echo '<a href="index.php"> <button class="upper-right-button"> <b> Login </b> </button> </a>';
 			echo '<form action="findarea.php" method="get">
 					<div class="search">
 					<input type="hidden" name="userid" value="">
@@ -80,8 +81,6 @@
 					<button type="submit" class="search-button"> <b> Search </b> </button>
 					</div>
 					</form>';
-			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
-			echo '<a href="index.php"> <button class="upper-right-button"> <b> Login </b> </button> </a>';
 		}
 		// Toolbar for member
 		else {
@@ -90,6 +89,9 @@
 			$result = mysqli_query($db,$sql);
 			$row = mysqli_fetch_assoc($result);
 			echo "<a href='viewAreaList.php?userid=".$userid."'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
+			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
+			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
+			echo "<a href='collectAreaList.php?userid=" . $userid . "'> <button class='fav'> <b> Favorite </b> </button> </a>";
 			echo '<form action="findarea.php" method="get">
 					<div class="search">
 					<input type="hidden" name="userid" value="'.$userid.'">
@@ -97,9 +99,6 @@
 					<button type="submit" class="search-button"> <b> Search </b> </button>
 					</div>
 					</form>';
-			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
-			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
-			echo "<a href='collectAreaList.php?userid=" . $userid . "'> <button class='fav'> <b> Favorite </b> </button> </a>";
 			// Give access to create area if admin
 			if($row['permission_level']==3){
 				echo "<a href='createArea.php?userid=" . $userid . "'> <button class='create-area'> <b> Create Area </b> </button> </a>";

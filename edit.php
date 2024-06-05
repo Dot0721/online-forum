@@ -86,7 +86,7 @@
         $article = $_POST['article'];
         $userid=$_POST['userid'];
         $areaid=$_POST['areaid'];
-        $sql = "update post set postname='$postname',article='$article' where postid='$postid'";
+        $sql = "update post set postname='$postname',article='$article',isclose='False' where postid='$postid'";
         if (!mysqli_query($db, $sql)) {
             die(mysqli_error($con));
         } else {
