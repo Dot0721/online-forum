@@ -68,7 +68,7 @@
 		if (!$userid) {
 			echo "<a href='viewAreaList.php?userid=0'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<form action="findpost.php" method="get">
-					<div class="visitor-search">
+					<div class="search">
 					<input type="hidden" name="userid" value="'.$userid.'">
 					<input type="hidden" name="areaid" value="'.$areaid.'">
 					<input type="text" name="search" placeholder="Enter keywords to search post" class="search-field">

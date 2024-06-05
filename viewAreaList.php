@@ -74,7 +74,7 @@
 		if (!$userid) {
 			echo "<a href='viewAreaList.php?userid=0'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<form action="findarea.php" method="get">
-					<div class="visitor-search">
+					<div class="search">
 					<input type="hidden" name="userid" value="">
 					<input type="text" name="search" placeholder="Enter keywords to search area" class="search-field">
 					<button type="submit" class="search-button"> <b> Search </b> </button>
