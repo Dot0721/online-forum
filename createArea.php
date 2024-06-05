@@ -28,7 +28,7 @@
         echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
     ?>
     <a href='viewAreaList.php?userid=<?=$userid?>'> <button class='last-page'> <b> All Areas </b> </button> </a>
-    <form name="form1" action="createArea.php" method="post">
+    <form name="form1" action="createArea.php" method="post" onsubmit="return confirmCreate()">
         <div>
             <h1> Create Area </h1>
             <input type="hidden" name="userid" value="<?=$userid?>">
@@ -43,14 +43,11 @@
     </form>
 </body>
 
-<!--
 <script>
     function confirmCreate() {
-        if(confirm('確認要創建此版區嗎?')) {
-        }
+        return confirm('確認要創建此版區嗎?')
     }
 </script>
--->
 
 </html>
 
