@@ -1,3 +1,7 @@
+<html>
+
+<title> Close Post </title>
+
 <?php
     include 'style.html';
     include 'db.php';
@@ -13,10 +17,6 @@
         $areaid=$_GET['areaid'];
     }
 ?>
-
-<html>
-
-<title> Close Post </title>
 
 <style>
     div {
@@ -51,8 +51,6 @@
     </div>
 </body>
 
-</html>
-
 <?php 
     if (isset($_POST['submit'])) {
         $postid = $_POST['postid'];
@@ -74,9 +72,11 @@
         else {
             echo "
             <script>
-                setTimeout(function(){window.location.href='viewPostList.php?areaid=$areaid&userid=$userid';},200);
+            setTimeout(function(){window.location.href='viewPostList.php?areaid=$areaid&userid=$userid';},200);
             </script>";
-
+            
         }
     }
 ?>
+
+</html>
