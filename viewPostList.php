@@ -15,7 +15,7 @@
         font-family: 'Nunito', sans-serif;
         text-align: center;
         position: relative;
-        top: 110px;
+        top: 80px;
     }
 	hr {
 		width: 80%;
@@ -26,7 +26,7 @@
         font-size: 18;
         text-align: center;
         position: relative;
-        top: 90px;
+        top: 70px;
     }
 	.write-post {
         width: 8em;
@@ -40,7 +40,7 @@
 	.postlist {
 		display: flex;
 		position: relative;
-		top: 100px;
+		top: 80px;
 		width: 80vw;
 		font-family: 'Nunito', sans-serif;
 		letter-spacing: .125rem;
