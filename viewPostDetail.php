@@ -73,7 +73,7 @@
 		}
 		else {
 			echo "<a href='viewAreaList.php?userid=".$userid."'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
-			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log out </b> </button> </a>';
+			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
 			echo "<a class=account href='userinfo.php?userid=" . $userid . "&areaid=0&postid=".$postid."'> <button class='account'> <b> Account </b> </button> </a>";
 			echo "<a href='viewPostList.php?areaid=$areaid&userid=$userid'> <button class='last-page'> <b> All Posts </b> </button> </a>";
 		}
