@@ -77,6 +77,7 @@
     $search = $_GET['search'];
 		// Toolbar for non-member
 		if (!$userid) {
+			echo "<a href='viewAreaList.php?userid=0'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log In </b> </button>  </a>';
             echo '<form action="findarea.php" method="get">
 					<input type="hidden" name="userid" value="'.$userid.'">
@@ -100,7 +101,7 @@
 			}*/
 		}
 	?>
-	<a href='viewAreaList.php?userid=<?=$userid?>'> <button class='last-page'> <b> All Areas </b> </button> </a>
+	<a href='viewAreaList.php?userid=<?=$userid?>'> <button class='visitor-last-page'> <b> All Areas </b> </button> </a>
 	<h1> Favorite Areas </h1>
 	<p class="dir"> Choose an area to start chatting! </p>
 	<div class="centerbox">
