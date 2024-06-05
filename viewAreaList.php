@@ -9,6 +9,13 @@
 ?>
 
 <style>
+	h1 {
+        font-size: 50;
+        font-family: 'Nunito', sans-serif;
+        text-align: center;
+        position: relative;
+        top: 60px;
+    }
 	h3 {
 		position: relative;
 		left: 0;
@@ -16,9 +23,16 @@
 	a {
 		text-decoration: none;
 	}
+	.dir { /*direction*/
+        color: grey;
+        font-size: 18;
+        text-align: center;
+        position: relative;
+        top: 30px;
+    }
 	.cards {
 		display: flex;
-        top: 100px;
+        top: 40px;
 		width: 80vw;
 		font-family: 'Nunito', sans-serif;
         letter-spacing: .125rem;
@@ -63,7 +77,7 @@
 					<div class="visitor-search">
 					<input type="hidden" name="userid" value="">
 					<input type="text" name="search" placeholder="Enter keywords to search area" class="search-field">
-					<button type="submit" class="search-button"> Search </button>
+					<button type="submit" class="search-button"> <b> Search </b> </button>
 					</div>
 					</form>';
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
@@ -80,7 +94,7 @@
 					<div class="search">
 					<input type="hidden" name="userid" value="'.$userid.'">
 					<input type="text" name="search" placeholder="Enter keywords to search area" class="search-field">
-					<button type="submit" class="search-button"> Search </button>
+					<button type="submit" class="search-button"> <b> Search </b> </button>
 					</div>
 					</form>';
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
