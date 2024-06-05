@@ -1,6 +1,6 @@
 <html>
 
-<title> All Posts </title>
+<title> Find Post </title>
 
 <?php
 	include 'style.html';

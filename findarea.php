@@ -1,6 +1,6 @@
 <html>
 
-<title>Areas </title>
+<title> Find Area </title>
 
 <?php
     include "style.html";
