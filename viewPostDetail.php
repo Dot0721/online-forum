@@ -126,14 +126,14 @@
 			}
 			
 		?>
-		<script>
-function confirmDeletion(userid, postid, areaid) {
-    if (confirm('確認要刪除此貼文嗎?')) {
-        // 確認後跳轉到 delete.php
-        window.location.href = 'delete.php?userid=' + userid + '&postid=' + postid + '&areaid=' + areaid;
-    }
-}
-</script>
+	<script>
+	function confirmDeletion(userid, postid, areaid) {
+		if (confirm('確認要刪除此貼文嗎?')) {
+        	// 確認後跳轉到 delete.php
+        	window.location.href = 'delete.php?userid=' + userid + '&postid=' + postid + '&areaid=' + areaid;
+    	}
+	}
+	</script>
 		</div>
 		<div>
 		<!-- show like button -->
