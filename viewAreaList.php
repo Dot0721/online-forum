@@ -60,9 +60,12 @@
 		if (!$userid) {
 			echo "<a href='viewAreaList.php?userid=0'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<form action="findarea.php" method="get">
+					<div class="visitor-search">
 					<input type="hidden" name="userid" value="">
-					<p><input type="text" name="search"></p>
-					<button type="submit">Search</button></form>';
+					<input type="text" name="search" placeholder="Enter keywords to search area" class="search-field">
+					<button type="submit" class="search-button"> Search </button>
+					</div>
+					</form>';
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Login </b> </button> </a>';
 		}
@@ -75,7 +78,7 @@
 			echo "<a href='viewAreaList.php?userid=".$userid."'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<form action="findarea.php" method="get">
 					<input type="hidden" name="userid" value="'.$userid.'">
-					<p><input type="text" name="search"></p>
+					<input type="text" name="search">
 					<button type="submit">Search</button></form>';
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
 			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=0&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
