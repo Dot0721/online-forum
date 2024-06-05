@@ -59,6 +59,11 @@
 		// Toolbar for non-member
 		if (!$userid) {
 			echo "<a href='viewAreaList.php?userid=0'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
+			echo '<form action="findarea.php" method="get">
+					<input type="hidden" name="userid" value="">
+					<p><input type="text" name="search"></p>
+					<button type="submit">Search</button></form>';
+			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Login </b> </button> </a>';
 		}
 		// Toolbar for member

@@ -77,7 +77,11 @@
     $search = $_GET['search'];
 		// Toolbar for non-member
 		if (!$userid) {
-			echo '<a href="index.php"> Login </a>';
+			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log In </b> </button>  </a>';
+            echo '<form action="findarea.php" method="get">
+					<input type="hidden" name="userid" value="'.$userid.'">
+					<p><input type="text" name="search"></p>
+					<button type="submit">Search</button></form>';
 		}
 		// Toolbar for member
 		else {
@@ -113,8 +117,14 @@
 					// Container for each area
 					echo "<div class='box'>";
 					echo 	"<h3 style='height:13%; width:85%; text-align:center'> $areaname </h3>";
-					$star_style = "icon/star-black.svg" ;
-					echo 	"<a href='collectArea.php?areaid=$areaid&userid=$userid' class='star icon-btn'> <img src=$star_style alt='Favorite' class='fit'	> </a>";
+					if ($userid) {
+						$sql = "select COUNT(*) as fav from collect_area where uid=$userid AND aid=$areaid";
+						$is_favCount = mysqli_query($db, $sql);
+						$is_fav = mysqli_fetch_assoc($is_favCount)['fav'] != 0;
+						// Choose image(star) to display
+						$star_style = "icon/star-" . ($is_fav ? "black" : "hollow") . ".svg" ;
+						echo 	"<a href='collectArea.php?areaid=$areaid&userid=$userid' class='star icon-btn'> <img src=$star_style alt='Favorite' class='fit'	> </a>";
+					}
 					// Button to enter area
 					echo 	"<div class='centerbox'>
 								<a href='viewPostList.php?areaid=$areaid&userid=$userid' class='enter'> enter </a>
