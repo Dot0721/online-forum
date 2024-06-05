@@ -6,6 +6,7 @@
 	include 'style.html';
 	$userid = $_GET['userid'];
 	$areaid=$_GET['areaid'];
+    $search = $_GET['search'];
 ?>
 
 <style>
@@ -105,7 +106,7 @@
 		$managename=$findmanage['name'];
 		echo "<p class='dir'> Manager: $managename </p>";
 		echo "</div>";
-		$sql = "select * from post where aid=$areaid";
+		$sql = "select * from post where aid=$areaid and postname LIKE '%$search%'";
 		$result = mysqli_query($db, $sql);
 		$_SESSION['userid'] = $userid = $_GET['userid'];
 		//從資料庫中撈留言紀錄並顯示出來
