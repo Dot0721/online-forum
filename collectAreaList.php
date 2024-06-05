@@ -77,7 +77,7 @@
 	<?php
 		// Toolbar for non-member
 		if (!$userid) {
-			echo '<a href="index.php"><button class="upper-right-button"> <b> Log In </b> </button>  </a>';
+			echo '<a href="index.php"> Login </a>';
 		}
 		// Toolbar for member
 		else {
