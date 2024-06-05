@@ -16,7 +16,7 @@
         font-family: 'Nunito', sans-serif;
         text-align: center;
         position: relative;
-        top: 110px;
+        top: 80px;
     }
 	hr {
 		width: 80%;
@@ -27,7 +27,7 @@
         font-size: 18;
         text-align: center;
         position: relative;
-        top: 90px;
+        top: 70px;
     }
 	.write-post {
         width: 8em;
@@ -41,7 +41,7 @@
 	.postlist {
 		display: flex;
 		position: relative;
-		top: 100px;
+		top: 80px;
 		width: 80vw;
 		font-family: 'Nunito', sans-serif;
 		letter-spacing: .125rem;
@@ -68,10 +68,13 @@
 		if (!$userid) {
 			echo "<a href='viewAreaList.php?userid=0'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<form action="findpost.php" method="get">
+					<div class="visitor-search">
 					<input type="hidden" name="userid" value="'.$userid.'">
 					<input type="hidden" name="areaid" value="'.$areaid.'">
-					<p><input type="text" name="search"></p>
-					<button type="submit">Search</button></form>';
+					<input type="text" name="search" placeholder="Enter keywords to search post" class="search-field">
+					<button type="submit" class="search-button"> <b> Search </b> </button>
+					</div>
+					</form>';
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Login </b> </button> </a>';
 			echo "<a href='viewAreaList.php?userid=0'> <button class='visitor-last-page'> <b> All Areas </b> </button> </a>";
@@ -79,10 +82,13 @@
 		else {
 			echo "<a href='viewAreaList.php?userid=". $userid . "'> <button class='bubbles'> <b> Bubbles </b> </button> </a>";
 			echo '<form action="findpost.php" method="get">
+					<div class="search">
 					<input type="hidden" name="userid" value="'.$userid.'">
 					<input type="hidden" name="areaid" value="'.$areaid.'">
-					<p><input type="text" name="search"></p>
-					<button type="submit">Search</button></form>';
+					<input type="text" name="search" placeholder="Enter keywords to search post" class="search-field">
+					<button type="submit" class="search-button"> <b> Search </b> </button>
+					</div>
+					</form>';
 			echo '<a href="index.php"> <button class="upper-right-button"> <b> Log Out </b> </button> </a>';
 			echo "<a href='userinfo.php?userid=" . $userid . "&areaid=" . $areaid . "&postid=0'> <button class='account'> <b> Account </b> </button> </a>";
 			echo "<a href='viewAreaList.php?userid=". $userid . "'> <button class='last-page'> <b> All Areas </b> </button> </a>";
